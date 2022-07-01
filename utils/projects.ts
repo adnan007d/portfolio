@@ -1,26 +1,26 @@
-import CPPIcon from "../../assets/cpp.png";
-import JSIcon from "../../assets/JS.png";
-import TSIcon from "../../assets/TS.png";
-import QTIcon from "../../assets/QT.png";
-import NODEIcon from "../../assets/Node.png";
-import NEXTIcon from "../../assets/NEXT.png";
-import REACTIcon from "../../assets/REACT.png";
-import FirebaseIcon from "../../assets/Firebase.png";
-import MongoIcon from "../../assets/Mongo.png";
-import WINIcon from "../../assets/WIN.png";
-import LINUXIcon from "../../assets/LINUX.png";
-import ProjectImage from "../../assets/Project.jpg";
-import ClgWebImage from "../../assets/clg-website.jpg";
-import LinkShortImage from "../../assets/link-short.png";
-import DeskEntryImage from "../../assets/desktop-entry.png";
-import TestPostImage from "../../assets/test-post.png";
-import NetflixImage from "../../assets/netflix.jpg";
-import TailWindIcon from "../../assets/tailwind.png";
-import HtmlIcon from "../../assets/html.png";
-import CssIcon from "../../assets/css.png";
-import BootStrapIcon from "../../assets/bootstrap.png";
-import AppleIcon from "../../assets/apple.png";
-import AndroidIcon from "../../assets/android.png";
+import CPPIcon from "../assets/cpp.png";
+import JSIcon from "../assets/JS.png";
+import TSIcon from "../assets/TS.png";
+import QTIcon from "../assets/QT.png";
+import NODEIcon from "../assets/Node.png";
+import NEXTIcon from "../assets/NEXT.png";
+import REACTIcon from "../assets/REACT.png";
+import FirebaseIcon from "../assets/Firebase.png";
+import MongoIcon from "../assets/Mongo.png";
+import WINIcon from "../assets/WIN.png";
+import LINUXIcon from "../assets/LINUX.png";
+import ProjectImage from "../assets/Project.png";
+import ClgWebImage from "../assets/clg-website.png";
+import LinkShortImage from "../assets/link-short.png";
+import DeskEntryImage from "../assets/desktop-entry.png";
+import TestPostImage from "../assets/test-post.png";
+import NetflixImage from "../assets/netflix.png";
+import TailWindIcon from "../assets/tailwind.png";
+import HtmlIcon from "../assets/html.png";
+import CssIcon from "../assets/css.png";
+import BootStrapIcon from "../assets/bootstrap.png";
+import AppleIcon from "../assets/apple.png";
+import AndroidIcon from "../assets/android.png";
 
 import { StaticImageData } from "next/image";
 
@@ -100,7 +100,7 @@ const projects: IProject[] = [
       },
       {
         title: "OS",
-        items: [WINIcon, LINUXIcon],
+        items: [WINIcon, LINUXIcon, AndroidIcon, AppleIcon],
       },
     ],
     github: "https://github.com/adnan007d/link-shortner",

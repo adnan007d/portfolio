@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Ket from "../../assets/ket.png";
+import Ket from "../assets/ket.png";
 const NavBar = () => {
   return (
     <div className="p-2 bg-[#1f2222a6] shadow-sm shadow-gray-600">
