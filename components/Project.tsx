@@ -34,7 +34,7 @@ const Project = ({
         <div>
           <IconButton className="h-7 w-7 text-white" onClick={toggleMinimise}>
             <KeyboardArrowDownIcon
-              className={`h-5 w-5 transition-all duration-300 ${
+              className={`h-5 w-5 transition-all duration-300 text-white ${
                 minimise && "-rotate-180"
               }`}
             />
@@ -43,7 +43,7 @@ const Project = ({
             className="h-7 w-7 text-white"
             onClick={() => onDeleteProject(id)}
           >
-            <CloseIcon className="h-5 w-5" />
+            <CloseIcon className="h-5 w-5 text-white" />
           </IconButton>
         </div>
       </header>
