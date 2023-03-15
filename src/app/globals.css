@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .text-shadow {
+    text-shadow: 5px 3px rebeccapurple, 7px 5px rebeccapurple,
+      9px 7px rebeccapurple, 11px 9px rebeccapurple;
+    transition: all 350ms ease-in-out;
+  }
+}
