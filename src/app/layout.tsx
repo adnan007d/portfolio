@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={clsx(
-          "text-black bg-white dark:text-white dark:bg-[#111010]",
+          "text-black bg-white dark:text-white dark:bg-[#111010] font-extrabold",
           cody.className,
           "max-w-7xl mx-auto"
         )}

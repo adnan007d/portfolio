@@ -10,11 +10,11 @@ const string = `FUCK YOU`;
 
 const Banner = () => {
   return (
-    <>
+    <section className="my-[5vh] min-h-[50vh] grid place-items-center">
       <h1
         className={clsx(
           led.className,
-          "text-3xl text-center",
+          "text-[10vw] text-center self-end",
           "sm:text-5xl",
           "md:text-7xl",
           "lg:text-8xl",
@@ -39,16 +39,14 @@ const Banner = () => {
       <h2
         className={clsx(
           led.className,
-          "text-xl text-center",
+          "text-xl text-center self-start font-black animate-shine",
           "sm:text-3xl",
-          "md:text-5xl",
-          "font-black",
-          "animate-shine"
+          "md:text-4xl"
         )}
       >
         Backend Developer
       </h2>
-    </>
+    </section>
   );
 };
 

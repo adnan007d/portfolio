@@ -3,7 +3,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between">
+    <header className="flex justify-between px-4 py-2">
       <Image
         src="/ket.webp"
         width={48}
@@ -12,7 +12,7 @@ const Navbar = () => {
         className="rounded-full"
         priority
       />
-    </div>
+    </header>
   );
 };
 
