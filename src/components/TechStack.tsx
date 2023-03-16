@@ -12,14 +12,7 @@ function Spehere() {
     mesh.current.rotation.y += 0.01;
   });
   return (
-    <mesh
-      ref={mesh}
-      rotation-x={Math.PI * 0.25}
-      rotation-y={Math.PI * 0.25}
-      lookAt={(x) => {
-        console.log(x);
-      }}
-    >
+    <mesh ref={mesh} rotation-x={Math.PI * 0.25} rotation-y={Math.PI * 0.25}>
       <sphereGeometry args={[1, 500, 500]} />
       <meshStandardMaterial map={colorMap} />
       <OrbitControls />
