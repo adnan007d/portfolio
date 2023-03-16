@@ -1,9 +1,9 @@
-import BannerName from "@/components/BannerName";
+import Banner from "@/components/Banner";
 
 export default function Home() {
   return (
     <div>
-      <BannerName />
+      <Banner />
     </div>
   );
 }
