@@ -1,8 +1,8 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
-import { Codystar } from "next/font/google";
+import { DotGothic16 } from "next/font/google";
 import clsx from "clsx";
-const cody = Codystar({
+const dotGothic16 = DotGothic16({
   subsets: ["latin"],
   weight: "400",
 });
@@ -21,9 +21,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={clsx(
-          "text-black bg-white dark:text-white dark:bg-[#111010] font-extrabold",
-          cody.className,
-          "max-w-7xl mx-auto"
+          "text-white bg-[#111010] font-extrabold tracking-widest",
+          dotGothic16.className,
+          "max-w-7xl mx-auto dark"
         )}
       >
         <Navbar />

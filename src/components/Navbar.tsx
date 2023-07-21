@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { DarkModeSwitch } from "./DarkModeSwitch";
 
 const Navbar = () => {
   return (
@@ -12,6 +13,7 @@ const Navbar = () => {
         className="rounded-full"
         priority
       />
+      <DarkModeSwitch />
     </header>
   );
 };
