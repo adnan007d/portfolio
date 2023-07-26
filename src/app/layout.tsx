@@ -1,10 +1,10 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
-import { DotGothic16 } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import clsx from "clsx";
-const dotGothic16 = DotGothic16({
+const sourceCodePro = Montserrat({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "700", "900"],
 });
 
 export const metadata = {
@@ -21,8 +21,8 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={clsx(
-          "text-white bg-[#111010] font-extrabold tracking-widest",
-          dotGothic16.className,
+          "text-slate-300 bg-[#1d1d1d] font-extrabold tracking-widest",
+          sourceCodePro.className,
           "max-w-7xl mx-auto dark"
         )}
       >
