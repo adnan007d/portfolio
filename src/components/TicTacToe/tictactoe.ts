@@ -1,3 +1,6 @@
+import { Mate } from "next/font/google";
+import { deprecate } from "util";
+
 export type Player = "vscode" | "neovim";
 export type BoardCell = Player | null;
 export type Board = [
@@ -6,18 +9,46 @@ export type Board = [
   [BoardCell, BoardCell, BoardCell],
 ];
 
-export function makePlayerMove(board: Board, i: number, j: number): Board {
+type GameStatus = "ongoing" | "over";
+
+type MoveResult = {
+  board: Board;
+  gameStatus: GameStatus | null;
+  winner: Player | null | "tie";
+};
+
+// let gameStatus: MoveResult["gameStatus"] = "ongoing";
+// let winStatus:  MoveResult["winStatus"] = null
+
+export function makePlayerMove(board: Board, i: number, j: number): MoveResult {
   if (board[i][j] !== null) {
-    return board;
+    return { board, gameStatus: null, winner: null };
   }
 
-  // TODO: Check Game Status
-
   board[i][j] = "vscode";
+  const winnerOrDraw = checkWinner(board);
+
+  // Either we have a winner or its a draw
+  if (winnerOrDraw) {
+    return { board, gameStatus: "over", winner: winnerOrDraw };
+  }
 
   // TODO: Computer Move
+  return { board, gameStatus: "ongoing", winner: null };
+}
 
-  return board;
+function NeovimMove(board: Board): void {
+  let bestScore = -Infinity;
+  let bestMove: { x: number; y: number };
+
+  for (let row = 0; row < 3; ++row) {
+    for (let col = 0; col < 3; ++col) {
+      if (board[row][col] !== null) {
+        board[row][col] = "neovim";
+        const score = minimax(board, 1, false);
+      }
+    }
+  }
 }
 
 export function checkWinner(board: Board): Player | null | "tie" {
@@ -98,8 +129,15 @@ function minimax(
 
   for (let row = 0; row < 3; ++row) {
     for (let col = 0; col < 3; ++col) {
-
+      if (board[row][col] === null) {
+        board[row][col] = isMaximizingPlayer ? "neovim" : "vscode";
+        const score = minimax(board, depth + 1, !isMaximizingPlayer);
+        board[row][col] = null;
+        bestScore = isMaximizingPlayer
+          ? Math.max(score, bestScore)
+          : Math.min(score, bestScore);
+      }
     }
   }
-  return 0;
+  return bestScore;
 }
