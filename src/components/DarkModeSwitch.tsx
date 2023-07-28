@@ -8,7 +8,7 @@ export const DarkModeSwitch = () => {
       target="_blank"
       className="flex items-center space-x-2"
     >
-      <Switch id="light-mode-toggle" checked={false} />
+      <Switch id="light-mode-toggle" checked={false} aria-label="light-mode-toggle"/>
       <Label htmlFor="light-mode-toggle">Light Mode</Label>
     </a>
   );
