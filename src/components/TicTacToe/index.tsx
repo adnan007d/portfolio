@@ -13,9 +13,15 @@ const TicTacToe = () => {
 
 
   function doPlayerMove(i: number, j: number) {
-      // I Hate this why do I have to make a copy to force a re render
-      // Maybe add another state to force a re render
-      setBoard([...makePlayerMove(board, i, j)]);
+
+      const result = makePlayerMove(board, i , j);
+
+      // Game is ongoing
+      if (!result) {
+        return;
+      }
+
+      setBoard([...result.board]);
   }
 
   return (

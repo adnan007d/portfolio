@@ -16,39 +16,61 @@ type MoveResult = {
   gameStatus: GameStatus | null;
   winner: Player | null | "tie";
 };
+/**
+ * This to keep track of winner will try to remove it;
+ */
+let globalWinner: MoveResult["winner"] = null;
 
-// let gameStatus: MoveResult["gameStatus"] = "ongoing";
-// let winStatus:  MoveResult["winStatus"] = null
-
-export function makePlayerMove(board: Board, i: number, j: number): MoveResult {
-  if (board[i][j] !== null) {
-    return { board, gameStatus: null, winner: null };
+export function makePlayerMove(
+  board: Board,
+  i: number,
+  j: number
+): MoveResult | null {
+  if (board[i][j] !== null || globalWinner) {
+    return null;
   }
 
   board[i][j] = "vscode";
-  const winnerOrDraw = checkWinner(board);
+  let winnerOrDraw = checkWinner(board);
+  globalWinner = winnerOrDraw;
 
   // Either we have a winner or its a draw
   if (winnerOrDraw) {
     return { board, gameStatus: "over", winner: winnerOrDraw };
   }
 
-  // TODO: Computer Move
+  neovimMove(board);
+  winnerOrDraw = checkWinner(board);
+  globalWinner = winnerOrDraw;
+
+  if (winnerOrDraw) {
+    return { board, gameStatus: "over", winner: winnerOrDraw };
+  }
+
   return { board, gameStatus: "ongoing", winner: null };
 }
 
-function NeovimMove(board: Board): void {
+function neovimMove(board: Board): void {
   let bestScore = -Infinity;
-  let bestMove: { x: number; y: number };
+  const bestMove = { row: 0, col: 0 };
 
   for (let row = 0; row < 3; ++row) {
     for (let col = 0; col < 3; ++col) {
-      if (board[row][col] !== null) {
+      if (board[row][col] === null) {
         board[row][col] = "neovim";
         const score = minimax(board, 1, false);
+        board[row][col] = null;
+
+        if (score > bestScore) {
+          bestScore = score;
+          bestMove.row = row;
+          bestMove.col = col;
+        }
       }
     }
   }
+
+  board[bestMove.row][bestMove.col] = "neovim";
 }
 
 export function checkWinner(board: Board): Player | null | "tie" {
@@ -96,13 +118,12 @@ function isDraw(board: Board): boolean {
   return board.every((row) => row.every((cell) => cell !== null));
 }
 
-type IScores = { vscode: number; neovim: number; tie: number };
+const scores = { vscode: -1, neovim: 1, tie: 0 };
 
 function minimax(
   board: Board,
   depth: number,
-  isMaximizingPlayer: boolean,
-  scores: IScores = { vscode: -1, neovim: 1, tie: 0 }
+  isMaximizingPlayer: boolean
 ): number {
   const winner = checkWinner(board);
 
@@ -110,21 +131,6 @@ function minimax(
     return scores[winner];
   }
 
-  // if (isMaximizingPlayer) {
-  //   let bestScore = -Infinity;
-  //   for (let row = 0; row < 3; ++row) {
-  //     for (let col = 0; col < 3; ++col) {
-  //       if (board[row][col] === null) {
-  //         board[row][col] = "neovim";
-  //         const score = minimax(board, depth + 1, false, scores);
-  //         board[row][col] = null;
-  //
-  //         bestScore = Math.max(score, bestScore);
-  //       }
-  //     }
-  //   }
-  //   return bestScore;
-  // }
   let bestScore = isMaximizingPlayer ? -Infinity : Infinity;
 
   for (let row = 0; row < 3; ++row) {
