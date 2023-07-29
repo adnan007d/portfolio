@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { Board, makePlayerMove } from "./tictactoe";
 import Image from "next/image";
+import { Toaster } from "@/components/ui/toaster";
+import { useToast } from "@/components/ui/use-toast";
 
 const TicTacToe = () => {
   const [board, setBoard] = useState<Board>([
@@ -10,22 +12,25 @@ const TicTacToe = () => {
     [null, null, null],
     [null, null, null],
   ]);
-
+  const { toast } = useToast();
 
   function doPlayerMove(i: number, j: number) {
+    const result = makePlayerMove(board, i, j);
 
-      const result = makePlayerMove(board, i , j);
+    // Game is ongoing
+    if (!result) {
+      return;
+    }
 
-      // Game is ongoing
-      if (!result) {
-        return;
-      }
-
-      setBoard([...result.board]);
+    setBoard([...result.board]);
+    if (result.gameStatus === "over") {
+      toast({ title: "Result", description: `Game Status ${result.winner}` });
+    }
   }
 
   return (
     <div>
+      <Toaster />
       <div className="grid grid-cols-3 grid-rows-3 aspect-square max-w-[400px] w-11/12 mx-auto">
         {board.map((row, i) =>
           row.map((col, j) => (
