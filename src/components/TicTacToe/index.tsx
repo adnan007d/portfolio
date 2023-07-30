@@ -5,6 +5,7 @@ import { Board, MoveResult, makePlayerMove, resetGame } from "./tictactoe";
 import Image from "next/image";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
+import { ToastAction } from "@/components/ui/toast";
 
 function generateResultMessage(winner: MoveResult["winner"]): string {
   let result = "";
@@ -53,6 +54,7 @@ const TicTacToe = () => {
         title: "Result",
         description: generateResultMessage(result.winner),
         className: "bg-[#111]",
+        action: <ToastAction altText="Close Button">Close</ToastAction>,
       });
     }
   }
@@ -68,12 +70,7 @@ const TicTacToe = () => {
         <Image width={20} height={20} src="/nvim.png" alt="neovim logo" />
         <span> Neovim </span>
         <span className="font-normal">VS</span>
-        <Image
-          width={20}
-          height={20}
-          src="/vscode.png"
-          alt="vscode logo"
-        />
+        <Image width={20} height={20} src="/vscode.png" alt="vscode logo" />
         <span> VSCode </span>
       </div>
       <p className="mb-2">Can VSCode win?</p>
