@@ -1,8 +1,8 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
-import { Montserrat } from "next/font/google";
+import { Source_Code_Pro } from "next/font/google";
 import clsx from "clsx";
-const sourceCodePro = Montserrat({
+const sourceCodePro = Source_Code_Pro({
   subsets: ["latin"],
   weight: ["400", "700", "900"],
 });
@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={clsx(
-          "text-slate-300 bg-[#1d1d1d] font-extrabold tracking-widest",
+          "text-slate-300 bg-[#1d1d1d]",
           sourceCodePro.className,
           "max-w-7xl mx-auto dark"
         )}

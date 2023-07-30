@@ -1,6 +1,3 @@
-import { Mate } from "next/font/google";
-import { deprecate } from "util";
-
 export type Player = "vscode" | "neovim";
 export type BoardCell = Player | null;
 export type Board = [
@@ -11,7 +8,7 @@ export type Board = [
 
 type GameStatus = "ongoing" | "over";
 
-type MoveResult = {
+export type MoveResult = {
   board: Board;
   gameStatus: GameStatus | null;
   winner: Player | null | "tie";
@@ -48,6 +45,10 @@ export function makePlayerMove(
   }
 
   return { board, gameStatus: "ongoing", winner: null };
+}
+
+export function resetGame() {
+  globalWinner = null;
 }
 
 function neovimMove(board: Board): void {
@@ -127,16 +128,17 @@ function minimax(
 ): number {
   const winner = checkWinner(board);
 
-  if (winner && winner != "vscode") {
+  if (winner) {
     return scores[winner];
   }
 
   let bestScore = isMaximizingPlayer ? -Infinity : Infinity;
+  const player = isMaximizingPlayer ? "neovim" : "vscode";
 
   for (let row = 0; row < 3; ++row) {
     for (let col = 0; col < 3; ++col) {
       if (board[row][col] === null) {
-        board[row][col] = isMaximizingPlayer ? "neovim" : "vscode";
+        board[row][col] = player;
         const score = minimax(board, depth + 1, !isMaximizingPlayer);
         board[row][col] = null;
         bestScore = isMaximizingPlayer

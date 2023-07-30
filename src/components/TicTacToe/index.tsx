@@ -1,10 +1,35 @@
 "use client";
 
 import { useState } from "react";
-import { Board, makePlayerMove } from "./tictactoe";
+import { Board, MoveResult, makePlayerMove, resetGame } from "./tictactoe";
 import Image from "next/image";
-import { Toaster } from "@/components/ui/toaster";
 import { useToast } from "@/components/ui/use-toast";
+import { Button } from "@/components/ui/button";
+
+function generateResultMessage(winner: MoveResult["winner"]): string {
+  let result = "";
+
+  switch (winner) {
+    case "neovim": {
+      result = "VSCode cannot win against NeoVim";
+      break;
+    }
+    case "vscode": {
+      result = "What how??? VSCode won!! what did you do";
+      break;
+    }
+    case "tie": {
+      result = "Its a tie";
+      break;
+    }
+    default: {
+      result = "How can you end up over here";
+      break;
+    }
+  }
+
+  return result;
+}
 
 const TicTacToe = () => {
   const [board, setBoard] = useState<Board>([
@@ -24,13 +49,34 @@ const TicTacToe = () => {
 
     setBoard([...result.board]);
     if (result.gameStatus === "over") {
-      toast({ title: "Result", description: `Game Status ${result.winner}` });
+      toast({
+        title: "Result",
+        description: generateResultMessage(result.winner),
+        className: "bg-[#111]",
+      });
     }
+  }
+
+  function onReset() {
+    setBoard((board) => board.map((row) => row.map(() => null)) as Board);
+    resetGame();
   }
 
   return (
     <div>
-      <Toaster />
+      <div className="flex items-center justify-center gap-2 font-semibold">
+        <Image width={20} height={20} src="/nvim.png" alt="neovim logo" />
+        <span> Neovim </span>
+        <span className="font-normal">VS</span>
+        <Image
+          width={20}
+          height={20}
+          src="/vscode.png"
+          alt="vscode logo"
+        />
+        <span> VSCode </span>
+      </div>
+      <p className="mb-2">Can VSCode win?</p>
       <div className="grid grid-cols-3 grid-rows-3 aspect-square max-w-[400px] w-11/12 mx-auto">
         {board.map((row, i) =>
           row.map((col, j) => (
@@ -52,9 +98,10 @@ const TicTacToe = () => {
         )}
       </div>
 
-      <div>
-        <button>reset</button>
-        <span>Status line</span>
+      <div className="my-2">
+        <Button onClick={onReset} className="text-base font-semibold">
+          Reset
+        </Button>
       </div>
     </div>
   );
