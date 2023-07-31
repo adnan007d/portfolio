@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { Source_Code_Pro } from "next/font/google";
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 const sourceCodePro = Source_Code_Pro({
   subsets: ["latin"],
   weight: ["400", "700", "900"],
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={clsx(
+        className={cn(
           "text-slate-300 bg-[#1d1d1d]",
           sourceCodePro.className,
           "max-w-7xl mx-auto dark"

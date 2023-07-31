@@ -96,7 +96,10 @@ const TicTacToe = () => {
       </div>
 
       <div className="my-2">
-        <Button  onClick={onReset} className="text-base font-semibold bg-secondary text-secondary-foreground">
+        <Button
+          onClick={onReset}
+          className="text-base font-semibold bg-secondary text-secondary-foreground"
+        >
           Reset
         </Button>
       </div>
