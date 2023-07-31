@@ -12,7 +12,7 @@ const TechStack = () => {
       >
         Arsenal
       </h3>
-      <div className="flex items-center gap-5">
+      <div className="flex flex-wrap justify-evenly items-center gap-5">
         {techStack.map((stack) => (
           <span
             className="px-4 py-2 rounded-md font-bold text-xl bg-secondary text-white"
