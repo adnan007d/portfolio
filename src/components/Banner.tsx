@@ -6,7 +6,7 @@ const Banner = () => {
     <section className="my-[5vh] min-h-[50vh] grid place-items-center">
       <h1
         className={clsx(
-          "text-[10vw] text-center self-end",
+          "text-[10vw] text-center self-end uppercase font-black",
           "sm:text-5xl",
           "md:text-7xl",
           "lg:text-8xl",
@@ -17,7 +17,7 @@ const Banner = () => {
       </h1>
       <h2
         className={clsx(
-          "text-xl text-center self-start font-black animate-shine",
+          "text-center text-secondary self-start font-semibold animate-shine text-[6vw]",
           "sm:text-3xl",
           "md:text-4xl"
         )}
