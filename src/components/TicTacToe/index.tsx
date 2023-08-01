@@ -86,6 +86,7 @@ const TicTacToe = () => {
                 <Image
                   width={100}
                   height={100}
+                  className="max-h-full"
                   src={col === "vscode" ? "/vscode.png" : "/nvim.png"}
                   alt={`${col} cell`}
                 />
