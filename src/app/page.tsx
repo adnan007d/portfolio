@@ -3,6 +3,7 @@ import Banner from "@/components/Banner";
 import TicTacToe from "@/components/TicTacToe";
 import { Toaster } from "@/components/ui/toaster";
 import Arsenal from "@/components/Arsenal";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <TicTacToe />
       </section>
       <Arsenal />
+      <Projects />
     </div>
   );
 }
