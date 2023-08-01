@@ -79,14 +79,13 @@ const TicTacToe = () => {
           row.map((col, j) => (
             <div
               key={`${i}${j}`}
-              className="border-2 h-full w-full border-white grid place-items-center"
+              className="relative border-2 h-full w-full border-white grid place-items-center"
               onClick={() => doPlayerMove(i, j)}
             >
               {col ? (
                 <Image
-                  width={100}
-                  height={100}
-                  className="max-h-full"
+                  fill
+                  className="object-contain"
                   src={col === "vscode" ? "/vscode.png" : "/nvim.png"}
                   alt={`${col} cell`}
                 />
@@ -99,7 +98,7 @@ const TicTacToe = () => {
       <div className="my-2">
         <Button
           onClick={onReset}
-          className="text-base font-semibold bg-secondary text-secondary-foreground"
+          className="text-base font-semibold bg-secondary text-secondary-foreground focus:bg-secondary"
         >
           Reset
         </Button>
