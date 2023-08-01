@@ -2,7 +2,7 @@ import About from "@/components/About";
 import Banner from "@/components/Banner";
 import TicTacToe from "@/components/TicTacToe";
 import { Toaster } from "@/components/ui/toaster";
-import TechStack from "@/components/TechStack";
+import Arsenal from "@/components/Arsenal";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
         <About />
         <TicTacToe />
       </section>
-      <TechStack />
+      <Arsenal />
     </div>
   );
 }

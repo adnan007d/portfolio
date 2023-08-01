@@ -2,7 +2,7 @@ import { cn, generateTilt, getTechStack } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
 
-const TechStack = () => {
+const Arsenal = () => {
   const techStack = getTechStack();
 
   return (
@@ -43,4 +43,4 @@ const TechStack = () => {
   );
 };
 
-export default TechStack;
+export default Arsenal;
