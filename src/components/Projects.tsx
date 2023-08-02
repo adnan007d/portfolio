@@ -58,15 +58,15 @@ const Projects = async () => {
       {projects.map((project, i) => (
         <div
           key={i}
-          className="border-white border-2 p-3 mx-3 rounded-lg max-w-[350px]"
+          className="border-white border-2 p-3 mx-3 rounded-lg max-w-[350px] space-y-2"
         >
-          <p className="text-xl font-bold text-secondary">{project.name}</p>
+          <p className="text-2xl font-bold text-secondary">{project.name}</p>
           <p className="text-sm text-slate-300">{project.desc}</p>
-          <p className="text-lg font-bold text-secondary">Tech Stack</p>
+          <p className="text-xl font-bold text-secondary">Tech Stack</p>
           <div className="grid grid-cols-2 text-center text-[0.8em] gap-2 md:grid-cols-3">
             {project.techStack.map((stack, i) => (
               <span
-                className="px-2 py-1 rounded-md bg-secondary font-bold"
+                className="px-2 py-1 rounded-md text-white bg-secondary font-bold"
                 key={i}
               >
                 {stack}
