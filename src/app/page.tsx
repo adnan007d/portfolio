@@ -4,6 +4,7 @@ import TicTacToe from "@/components/TicTacToe";
 import { Toaster } from "@/components/ui/toaster";
 import Arsenal from "@/components/Arsenal";
 import Projects from "@/components/Projects";
+import LatestGitRepo from "@/components/LatestGitRepo";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       </section>
       <Arsenal />
       <Projects />
+      <LatestGitRepo />
     </div>
   );
 }
