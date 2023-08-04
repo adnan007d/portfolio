@@ -62,7 +62,7 @@ const Projects = async () => {
         {projects.map((project, i) => (
           <div
             key={i}
-            className="border-white border-2 p-3 mx-3 rounded-lg max-w-[350px] space-y-2"
+            className="border-white/70 border-2 p-4 mx-3 rounded-lg max-w-[350px] space-y-2"
           >
             <div className="flex items-center justify-between">
               <p className="text-2xl font-bold text-secondary">
