@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { Source_Code_Pro } from "next/font/google";
 import { cn } from "@/lib/utils";
+import Footer from "@/components/Footer";
 const sourceCodePro = Source_Code_Pro({
   subsets: ["latin"],
   weight: ["400", "700", "900"],
@@ -28,6 +29,7 @@ export default function RootLayout({
       >
         <Navbar />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
