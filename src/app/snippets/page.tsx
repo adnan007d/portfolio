@@ -1,9 +1,10 @@
 import fs from "fs";
+import path from "path";
 
 async function getLatestSnippets() {
-  const path = `${process.cwd()}/src/snippets`;
+  const folderPath = `${process.cwd()}/src/snippets`;
   const files = await fs.promises
-    .readdir(path)
+    .readdir(folderPath)
     .then((files) => files.filter((file) => file.endsWith(".mdx")));
 
   // TODO: Maybe a custom implementation for partial sort
@@ -16,9 +17,13 @@ async function getLatestSnippets() {
     .slice(0, 3);
 
   const data = await Promise.all(
-    sortedFiles.map((file) =>
-      import(`@/snippets/${file}`).then((mod) => mod.meta)
-    )
+    sortedFiles.map(async (file) => {
+      const meta = await import(`@/snippets/${file}`).then((mod) => mod.meta);
+      return {
+        id: path.parse(file).name,
+        ...meta,
+      };
+    })
   );
 
   return data;
@@ -29,8 +34,8 @@ const Snippets = async () => {
 
   return (
     <div className="grid grid-cols-3">
-      {snippets.map((snippet, i) => (
-        <div key={i}>
+      {snippets.map((snippet) => (
+        <div key={snippet.id} className="border border-white p-4">
           <p>{snippet.title}</p>
           <p>{snippet.desc}</p>
         </div>
