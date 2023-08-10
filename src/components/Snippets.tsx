@@ -47,7 +47,7 @@ export const Snippet = ({ snippet }: { snippet: ISnippet }) => {
       <p className="text-secondary text-xl font-bold">{snippet.title}</p>
       <p className="text-sm">{snippet.desc}</p>
       <Link
-        className="bg-secondary px-4 py-2 w-max justify-self-end font-medium rounded-md"
+        className="bg-secondary px-4 py-2 w-max justify-self-end font-bold rounded-md"
         href={`/snippets/${snippet.id}`}
       >
         View
