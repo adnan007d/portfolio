@@ -7,22 +7,22 @@ export const Icons = {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0,0,256,256"
-      fill-rule="nonzero"
+      fillRule="nonzero"
     >
       <g
         fill="#a335fd"
-        fill-rule="nonzero"
+        fillRule="nonzero"
         stroke="none"
-        stroke-width="1"
-        stroke-linecap="butt"
-        stroke-linejoin="miter"
-        stroke-miterlimit="10"
-        stroke-dasharray=""
-        stroke-dashoffset="0"
-        font-family="none"
-        font-weight="none"
-        font-size="none"
-        text-anchor="none"
+        strokeWidth="1"
+        strokeLinecap="butt"
+        strokeLinejoin="miter"
+        strokeMiterlimit="10"
+        strokeDasharray=""
+        strokeDashoffset="0"
+        fontFamily="none"
+        fontWeight="none"
+        fontSize="none"
+        textAnchor="none"
         style={{ mixBlendMode: "normal" }}
       >
         <g transform="scale(8.53333,8.53333)">
@@ -38,12 +38,12 @@ export const Icons = {
       xmlns="http://www.w3.org/2000/svg"
       fill="#000000"
     >
-      <g id="SVGRepo_bgCarrier" stroke-width="0" />
+      <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
       <g
         id="SVGRepo_tracerCarrier"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
 
       <g id="SVGRepo_iconCarrier">
@@ -55,9 +55,9 @@ export const Icons = {
                 fill="none"
                 points="4 8.2 12 14.1 20 8.2"
                 stroke="#A335FD"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
               />
               <rect
                 fill="none"
@@ -65,9 +65,9 @@ export const Icons = {
                 rx="2"
                 ry="2"
                 stroke="#A335FD"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 width="18"
                 x="3"
                 y="6.5"
@@ -94,41 +94,41 @@ export const Icons = {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0,0,256,256"
-      fill-rule="nonzero"
+      fillRule="nonzero"
     >
       <g
         fill-opacity="0"
         fill="#000000"
-        fill-rule="nonzero"
+        fillRule="nonzero"
         stroke="none"
-        stroke-width="1"
-        stroke-linecap="butt"
-        stroke-linejoin="miter"
-        stroke-miterlimit="10"
-        stroke-dasharray=""
-        stroke-dashoffset="0"
-        font-family="none"
-        font-weight="none"
-        font-size="none"
-        text-anchor="none"
+        strokeWidth="1"
+        strokeLinecap="butt"
+        strokeLinejoin="miter"
+        strokeMiterlimit="10"
+        strokeDasharray=""
+        strokeDashoffset="0"
+        fontFamily="none"
+        fontWeight="none"
+        fontSize="none"
+        textAnchor="none"
         style={{mixBlendMode: "normal"}}
       >
         <path d="M0,256v-256h256v256z" id="bgRectangle"></path>
       </g>
       <g
         fill="#a335fd"
-        fill-rule="nonzero"
+        fillRule="nonzero"
         stroke="none"
-        stroke-width="1"
-        stroke-linecap="butt"
-        stroke-linejoin="miter"
-        stroke-miterlimit="10"
-        stroke-dasharray=""
-        stroke-dashoffset="0"
-        font-family="none"
-        font-weight="none"
-        font-size="none"
-        text-anchor="none"
+        strokeWidth="1"
+        strokeLinecap="butt"
+        strokeLinejoin="miter"
+        strokeMiterlimit="10"
+        strokeDasharray=""
+        strokeDashoffset="0"
+        fontFamily="none"
+        fontWeight="none"
+        fontSize="none"
+        textAnchor="none"
         style={{mixBlendMode: "normal"}}
       >
         <g transform="scale(5.12,5.12)">

@@ -45,3 +45,4 @@ export function generateTilt() {
     rotate: `${rotate}deg`,
   };
 }
+
