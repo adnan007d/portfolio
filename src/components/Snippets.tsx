@@ -3,7 +3,10 @@ import React from "react";
 import path from "path";
 import fs from "fs";
 
-type ISnippet = any;
+interface ISnippet extends MDXMetaData {
+  id: string;
+}
+
 type GetSnippets = {
   latest: boolean;
 };
@@ -27,7 +30,9 @@ export async function getSnippets(options?: GetSnippets) {
 
   const data = await Promise.all(
     sortedFiles.map(async (file) => {
-      const meta = await import(`@/snippets/${file}`).then((mod) => mod.meta);
+      const meta: MDXMetaData = await import(`@/snippets/${file}`).then(
+        (mod) => mod.meta
+      );
       return {
         id: path.parse(file).name,
         ...meta,

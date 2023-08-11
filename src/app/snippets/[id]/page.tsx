@@ -2,6 +2,7 @@ import React from "react";
 import fs from "fs";
 import path from "path";
 import Highlight from "./Highlight";
+import { Metadata } from "next";
 
 export async function generateStaticParams() {
   const folderPath = process.cwd() + "/src/snippets";
@@ -16,15 +17,33 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const metadata: MDXMetaData = await import(
+    `@/snippets/${params.id}.mdx`
+  ).then((mod) => mod.meta);
+
+  return {
+    title: metadata.title,
+    description: metadata.desc,
+    openGraph: {
+      title: metadata.title,
+      description: metadata.desc,
+    },
+  };
+}
+
 const Snippet = async ({ params }: { params: { id: string } }) => {
   const MDX = await import(`@/snippets/${params.id}.mdx`).then(
     (mod) => mod.default
   );
   return (
-    <div className="prose prose-invert prose-pre:bg-inherit">
+    <div className="prose prose-invert prose-pre:bg-inherit mx-[5vw] max-w-3xl">
       <MDX />
       <Highlight />
-      <div>Snippet {params.id}</div>
     </div>
   );
 };

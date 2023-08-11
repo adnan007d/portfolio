@@ -1,15 +1,96 @@
+export const title = "My tsconfig.json";
+export const desc = "tsconfig.json I use for Next.js & Node.js projects";
+
 export const meta  =  {
-  title: "My tsconfig.json",
-  desc: "tsconfig.json I use for Next.js & Node.js projects",
-  languages: ["json"]
+  title: title,
+  desc: desc,
 }
 
 
-# My tsconfig.json
+# {title}
+{desc}
+### For Next.js
+```json
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "checkJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "useUnknownInCatchVariables": true,
+    "allowSyntheticDefaultImports": true,
+    "useDefineForClassFields": true,
+  },
+  "include": [
+    ".eslintrc.cjs",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.cjs",
+    "**/*.mjs",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}
+```
+
+
+### For Node.js
 
 
 ```json
 {
-  "wtf": "I hate it",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "target": "ES2022",
+    "moduleResolution": "Node",
+    "outDir": "./dist",
+    "allowJs": true,
+    "checkJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "useUnknownInCatchVariables": true,
+    "noUncheckedIndexedAccess": true, /* This depends on you */
+    "allowSyntheticDefaultImports": true,
+    "useDefineForClassFields": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "typeRoots": ["./src/@types"]
+  },
+  "include": ["src/**/*.ts"]
 }
 ```
