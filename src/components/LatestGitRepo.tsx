@@ -5,8 +5,6 @@ import React from "react";
  * @throws FetchError
  */
 async function getOgImageFromGithub(url: string): Promise<string | undefined> {
-  console.log(url);
-
   const html = await fetch(url, { next: { revalidate: 60 * 60 * 24 } }).then(
     (res) => res.text()
   );

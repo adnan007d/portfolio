@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@mdx-js/loader": "^2.3.0",
@@ -27,6 +28,7 @@
     "highlight.js": "^11.8.0",
     "lucide-react": "^0.263.1",
     "next": "13.4.12",
+    "next-sitemap": "^4.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sharp": "^0.32.4",
