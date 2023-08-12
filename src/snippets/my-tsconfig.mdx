@@ -1,5 +1,5 @@
 export const title = "My tsconfig.json";
-export const desc = "tsconfig.json I use for Next.js & Node.js projects";
+export const desc = "tsconfig.json & eslint config I use for Next.js & Node.js projects";
 
 export const meta  =  {
   title: title,
@@ -10,6 +10,7 @@ export const meta  =  {
 # {title}
 {desc}
 ### For Next.js
+- tsconfig.json
 ```json
 {
   "compilerOptions": {
@@ -59,11 +60,38 @@ export const meta  =  {
   "exclude": ["node_modules"]
 }
 ```
+- eslint
+```json
+{
+  "plugins": ["@typescript-eslint"],
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
+    "prefer-const": "warn",
+    "@typescript-eslint/no-unused-vars": [
+      "warn", // or "error"
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/no-non-null-asserted-optional-chain": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+
+    "@typescript-eslint/no-empty-function": [
+      "error",
+      {
+        "allow": ["arrowFunctions"]
+      }
+    ]
+  }
+}
+```
 
 
 ### For Node.js
-
-
+- tsconfig.json
 ```json
 {
   "compilerOptions": {
@@ -92,5 +120,33 @@ export const meta  =  {
     "typeRoots": ["./src/@types"]
   },
   "include": ["src/**/*.ts"]
+}
+```
+- eslint
+```json
+{
+  "plugins": ["@typescript-eslint"],
+  "extends": ["plugin:@typescript-eslint/recommended"],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
+    "prefer-const": "warn",
+    "@typescript-eslint/no-unused-vars": [
+      "warn", // or "error"
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/no-non-null-asserted-optional-chain": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+
+    "@typescript-eslint/no-empty-function": [
+      "error",
+      {
+        "allow": ["arrowFunctions"]
+      }
+    ]
+  }
 }
 ```
