@@ -15,6 +15,7 @@ export const DarkModeSwitch = () => {
       <Switch
         onCheckedChange={onCheckedChanged}
         id="light-mode-toggle"
+        aria-label="light mode toggle"
         checked={false}
       />
       <Label htmlFor="light-mode-toggle">Light Mode</Label>
