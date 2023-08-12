@@ -30,7 +30,6 @@ export async function getSnippets(options?: GetSnippets) {
 
   const data = await Promise.all(
     sortedFiles.map(async (file) => {
-      console.log(file)
       const meta: MDXMetaData = await import(`@/snippets/${file}`).then(
         (mod) => mod.meta
       );

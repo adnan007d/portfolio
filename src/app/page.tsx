@@ -6,23 +6,6 @@ import Arsenal from "@/components/Arsenal";
 import Projects from "@/components/Projects";
 import LatestGitRepo from "@/components/LatestGitRepo";
 import Snippets from "@/components/Snippets";
-import { Metadata } from "next";
-
-export async function generateMetadata(): Promise<Metadata> {
-  const title = "Adnan Mansuri";
-  const description =
-    "Experienced Software Developer with expertise in TypeScript, Node.js, Next.js, data structures, and algorithms. Known for efficient and scalable solutions. Proficient in API architecture and performance optimization. Passionate about innovative and maintainable code. Skilled in automation, including web scrapers. Seeking dynamic projects to drive business growth.";
-
-  return {
-    title,
-    description,
-
-    openGraph: {
-      title,
-      description,
-    },
-  };
-}
 
 export default function Home() {
   return (
