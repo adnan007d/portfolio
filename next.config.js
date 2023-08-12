@@ -1,18 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental : {
+  experimental: {
     mdxRs: true,
   },
-images: {
+  images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'opengraph.githubassets.com',
-        port: '',
-        pathname: '/*/adnan007d/**',
+        protocol: "https",
+        hostname: "opengraph.githubassets.com",
+        port: "",
+        pathname: "/*/adnan007d/**",
       },
     ],
   },
-}
-const withMDX = require('@next/mdx')()
-module.exports = withMDX(nextConfig)
+};
+const withMDX = require("@next/mdx")();
+module.exports = withMDX(nextConfig);
