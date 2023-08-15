@@ -7,6 +7,9 @@ import Projects from "@/components/Projects";
 import LatestGitRepo from "@/components/LatestGitRepo";
 import Snippets from "@/components/Snippets";
 
+// One day
+export const revalidate = 86400;
+
 export default function Home() {
   return (
     <div>
