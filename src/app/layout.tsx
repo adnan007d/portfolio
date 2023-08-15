@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { Source_Code_Pro } from "next/font/google";
@@ -62,6 +63,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
