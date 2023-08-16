@@ -3,6 +3,11 @@ const nextConfig = {
   experimental: {
     mdxRs: true,
   },
+  modularizeImports: {
+    "lucide-react": {
+      transform: "lucide-react/dist/esm/icons/{{kebabCase member}}.js",
+    },
+  },
   images: {
     remotePatterns: [
       {

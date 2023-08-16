@@ -1,9 +1,7 @@
 import * as React from "react";
 import * as ToastPrimitives from "@radix-ui/react-toast";
 import { cva, type VariantProps } from "class-variance-authority";
-// FIXME: Fix this shit when nextjs add modulariseImport support
-// @ts-expect-error No declaration file
-import { X } from "lucide-react/dist/esm/lucide-react";
+import { X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
