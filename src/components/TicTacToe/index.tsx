@@ -67,24 +67,10 @@ const TicTacToe = () => {
   return (
     <div>
       <div className="flex items-center justify-center gap-2 font-semibold">
-        <Image
-          priority
-          loading={"eager"}
-          width={20}
-          height={20}
-          src="/nvim.png"
-          alt="neovim logo"
-        />
+        <Image width={20} height={20} src="/nvim.png" alt="neovim logo" />
         <span> Neovim </span>
         <span className="font-normal">VS</span>
-        <Image
-          priority
-          loading={"eager"}
-          width={20}
-          height={20}
-          src="/vscode.png"
-          alt="vscode logo"
-        />
+        <Image width={20} height={20} src="/vscode.png" alt="vscode logo" />
         <span> VSCode </span>
       </div>
       <p className="mb-2">Can VSCode win?</p>
@@ -99,6 +85,9 @@ const TicTacToe = () => {
               {col ? (
                 <Image
                   fill
+                  priority
+                  sizes="128px"
+                  loading={"eager"}
                   className="object-contain"
                   src={col === "vscode" ? "/vscode.png" : "/nvim.png"}
                   alt={`${col} cell`}
