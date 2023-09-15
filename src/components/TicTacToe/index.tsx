@@ -67,10 +67,24 @@ const TicTacToe = () => {
   return (
     <div>
       <div className="flex items-center justify-center gap-2 font-semibold">
-        <Image width={20} height={20} src="/nvim.png" alt="neovim logo" />
+        <Image
+          priority
+          loading={"eager"}
+          width={20}
+          height={20}
+          src="/nvim.png"
+          alt="neovim logo"
+        />
         <span> Neovim </span>
         <span className="font-normal">VS</span>
-        <Image width={20} height={20} src="/vscode.png" alt="vscode logo" />
+        <Image
+          priority
+          loading={"eager"}
+          width={20}
+          height={20}
+          src="/vscode.png"
+          alt="vscode logo"
+        />
         <span> VSCode </span>
       </div>
       <p className="mb-2">Can VSCode win?</p>
@@ -98,7 +112,7 @@ const TicTacToe = () => {
       <div className="my-2">
         <Button
           onClick={onReset}
-          className="text-base font-semibold bg-secondary text-secondary-foreground focus:bg-secondary"
+          className="text-base font-semibold bg-secondary text-secondary-foreground focus:bg-secondary hover:bg-secondary/90"
         >
           Reset
         </Button>
