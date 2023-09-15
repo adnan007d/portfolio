@@ -1,16 +1,20 @@
 export const title = "My tsconfig.json";
-export const desc = "tsconfig.json & eslint config I use for Next.js & Node.js projects";
+export const desc =
+  "tsconfig.json & eslint config I use for Next.js & Node.js projects";
 
-export const meta  =  {
+export const meta = {
   title: title,
   desc: desc,
-}
-
+};
 
 # {title}
+
 {desc}
+
 ### For Next.js
+
 - tsconfig.json
+
 ```json
 {
   "compilerOptions": {
@@ -60,7 +64,9 @@ export const meta  =  {
   "exclude": ["node_modules"]
 }
 ```
+
 - eslint
+
 ```json
 {
   "plugins": ["@typescript-eslint"],
@@ -89,15 +95,22 @@ export const meta  =  {
 }
 ```
 
-
 ### For Node.js
+
+- Install these dev dependencies
+
+```
+@typescript-eslint/parser @typescript-eslint/eslint-plugin eslint typescript
+```
+
 - tsconfig.json
+
 ```json
 {
   "compilerOptions": {
     "module": "NodeNext",
     "target": "ES2022",
-    "moduleResolution": "Node",
+    "moduleResolution": "NodeNext",
     "outDir": "./dist",
     "allowJs": true,
     "checkJs": true,
@@ -109,7 +122,7 @@ export const meta  =  {
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "useUnknownInCatchVariables": true,
-    "noUncheckedIndexedAccess": true, /* This depends on you */
+    "noUncheckedIndexedAccess": true /* This depends on you */,
     "allowSyntheticDefaultImports": true,
     "useDefineForClassFields": true,
     "forceConsistentCasingInFileNames": true,
@@ -122,11 +135,14 @@ export const meta  =  {
   "include": ["src/**/*.ts"]
 }
 ```
+
 - eslint
+
 ```json
 {
   "plugins": ["@typescript-eslint"],
-  "extends": ["plugin:@typescript-eslint/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
   "rules": {
     "@typescript-eslint/no-explicit-any": "off",
     "prefer-const": "warn",
@@ -140,6 +156,11 @@ export const meta  =  {
     ],
     "@typescript-eslint/no-non-null-asserted-optional-chain": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
+
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      { "prefer": "type-imports", "fixStyle": "inline-type-imports" }
+    ],
 
     "@typescript-eslint/no-empty-function": [
       "error",
