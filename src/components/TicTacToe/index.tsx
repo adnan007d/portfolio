@@ -1,13 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Board,
-  MoveResult,
-  Player,
-  makePlayerMove,
-  resetGame,
-} from "./tictactoe";
+import { Board, MoveResult, makePlayerMove, resetGame } from "./tictactoe";
 import Image from "next/image";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
