@@ -1,7 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Board, MoveResult, makePlayerMove, resetGame } from "./tictactoe";
+import {
+  Board,
+  MoveResult,
+  Player,
+  makePlayerMove,
+  resetGame,
+} from "./tictactoe";
 import Image from "next/image";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
@@ -30,6 +36,21 @@ function generateResultMessage(winner: MoveResult["winner"]): string {
   }
 
   return result;
+}
+
+function getBlurImage(player: Player): string {
+  let dataUrl = "";
+  switch (player) {
+    case "vscode":
+      dataUrl =
+        "data:image/webp;base64,UklGRmoAAABXRUJQVlA4WAoAAAAQAAAABAAABAAAQUxQSBoAAAAAAgAr4KCHXtTK+ZP/kD7/hVzTzPkCACzanVZQOCAqAAAAkAEAnQEqBQAFAAkArCWwAnQAgYWAAO4EY/51EdPkdhC8vxfr7yh2JMAA";
+      break;
+    case "neovim":
+      dataUrl =
+        "data:image/webp;base64,UklGRmoAAABXRUJQVlA4WAoAAAAQAAAABAAABAAAQUxQSBoAAAAAAgAr4KCHXtTK+ZP/kD7/hVzTzPkCACzanVZQOCAqAAAAkAEAnQEqBQAFAAkArCWwAnQAgYWAAO4EY/51EdPkdhC8vxfr7yh2JMAA";
+      break;
+  }
+  return dataUrl;
 }
 
 const TicTacToe = () => {
@@ -88,6 +109,8 @@ const TicTacToe = () => {
                   priority
                   sizes="128px"
                   loading={"eager"}
+                  placeholder="blur"
+                  blurDataURL={getBlurImage(col)}
                   className="object-contain"
                   src={col === "vscode" ? "/vscode.png" : "/nvim.png"}
                   alt={`${col} cell`}

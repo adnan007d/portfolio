@@ -68,7 +68,12 @@ const Projects = async () => {
               <p className="text-2xl font-bold text-secondary">
                 {project.name}
               </p>
-              <a aria-label={`Link for ${project.name}`} href={project.link} target="_blank" rel="noopener noreferrer">
+              <a
+                aria-label={`Link for ${project.name}`}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {/* NOTE: This svg will be added 2 times one for the actual html and one for the metadata to recreate the react tree */}
                 <svg
                   className="w-7 aspect-square"
