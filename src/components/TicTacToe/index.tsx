@@ -38,21 +38,6 @@ function generateResultMessage(winner: MoveResult["winner"]): string {
   return result;
 }
 
-function getBlurImage(player: Player): string {
-  let dataUrl = "";
-  switch (player) {
-    case "vscode":
-      dataUrl =
-        "data:image/webp;base64,UklGRmoAAABXRUJQVlA4WAoAAAAQAAAABAAABAAAQUxQSBoAAAAAAgAr4KCHXtTK+ZP/kD7/hVzTzPkCACzanVZQOCAqAAAAkAEAnQEqBQAFAAkArCWwAnQAgYWAAO4EY/51EdPkdhC8vxfr7yh2JMAA";
-      break;
-    case "neovim":
-      dataUrl =
-        "data:image/webp;base64,UklGRmoAAABXRUJQVlA4WAoAAAAQAAAABAAABAAAQUxQSBoAAAAAAgAr4KCHXtTK+ZP/kD7/hVzTzPkCACzanVZQOCAqAAAAkAEAnQEqBQAFAAkArCWwAnQAgYWAAO4EY/51EdPkdhC8vxfr7yh2JMAA";
-      break;
-  }
-  return dataUrl;
-}
-
 const TicTacToe = () => {
   const [board, setBoard] = useState<Board>([
     [null, null, null],
@@ -109,8 +94,6 @@ const TicTacToe = () => {
                   priority
                   sizes="128px"
                   loading={"eager"}
-                  placeholder="blur"
-                  blurDataURL={getBlurImage(col)}
                   className="object-contain"
                   src={col === "vscode" ? "/vscode.png" : "/nvim.png"}
                   alt={`${col} cell`}
