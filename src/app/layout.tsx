@@ -4,8 +4,10 @@ import "./globals.css";
 import { Source_Code_Pro } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/Footer";
-import { Metadata, Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import React from "react"
+
 
 const sourceCodePro = Source_Code_Pro({
   subsets: ["latin"],

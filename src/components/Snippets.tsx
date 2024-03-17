@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import path from "path";
 import fs from "fs";
+import type { MDXMetaData } from "@/types/mdx";
 
 interface ISnippet extends MDXMetaData {
   id: string;

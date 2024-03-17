@@ -2,7 +2,8 @@ import React from "react";
 import fs from "fs";
 import path from "path";
 import Highlight from "./Highlight";
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import type { MDXMetaData } from "@/types/mdx";
 
 export async function generateStaticParams() {
   const folderPath = process.cwd() + "/src/snippets";
