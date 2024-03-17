@@ -4,7 +4,9 @@ import "./globals.css";
 import { Source_Code_Pro } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/Footer";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 const sourceCodePro = Source_Code_Pro({
   subsets: ["latin"],
   weight: ["400", "700", "900"],
@@ -42,8 +44,11 @@ export async function generateMetadata(): Promise<Metadata> {
       creator: "@adnan007d",
       card: "summary_large_image",
     },
-    themeColor: "#1d1d1d",
   };
+}
+
+export const viewport : Viewport = {
+  themeColor: "#1d1d1d",
 }
 
 export default function RootLayout({
@@ -64,6 +69,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -32,22 +32,28 @@ function getAllProjects(): Project[] {
       ],
       desc: "Website for Godrej brand of Real Good Chicken created using Next 13 React Server Components. A dashboard using vite and Ant Design. Backend using Express.js and MySQL as database",
     },
+    // {
+    //   name: "World NFT Exchange",
+    //   link: "https://worldnftexchange.io",
+    //   techStack: [
+    //     "Next.js",
+    //     "Tailwind",
+    //     "Solidity",
+    //     "Ethers.js",
+    //     "Wagmi",
+    //     "Next-Auth",
+    //     "Moralias",
+    //     "Alchemy",
+    //     "MongoDB",
+    //   ],
+    //   desc: "A NFT Trading platform built with Next.js and wagmi and ethers.js to commumincate between the smart contract and the web app",
+    // },
     {
-      name: "World NFT Exchange",
-      link: "https://worldnftexchange.io",
-      techStack: [
-        "Next.js",
-        "Tailwind",
-        "Solidity",
-        "Ethers.js",
-        "Wagmi",
-        "Next-Auth",
-        "Moralias",
-        "Alchemy",
-        "MongoDB",
-      ],
-      desc: "A NFT Trading platform built with Next.js and wagmi and ethers.js to commumincate between the smart contract and the web app",
-    },
+      name: "Saanidhaanm Website",
+      link: "https://saanidhaanam.com",
+      techStack: ["Next.js", "Tailwind", "Node.js", "Ant Design", "Vite", "MongoDB", "Firebase Storage"],
+      desc: "Website for Saanidhaanm created using Next.js and Tailwind. A dashboard using vite and Ant Design.",
+    }
   ];
 }
 
