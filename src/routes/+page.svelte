@@ -1,0 +1,114 @@
+<script lang="ts">
+	import JobExperience from '@/components/JobExperience.svelte';
+	import type { PageData } from './$types';
+	import StarIcon from '@/logos/StarIcon.svelte';
+	import GitFork from '@/logos/GitFork.svelte';
+	import GithubOutline from '@/logos/GithubOutline.svelte';
+	export let data: PageData;
+
+	const stacks = [
+		{ name: 'Node.js', image: '/logos/nodejs.svg' },
+		{ name: 'Typescript', image: '/logos/typescript.svg' },
+		{ name: 'Next.js', image: '/logos/nextjs.svg' },
+		{ name: 'React.js', image: '/logos/react.svg' },
+		{ name: 'SQL', image: '/logos/sql.svg' },
+		{ name: 'Python', image: '/logos/python.svg' },
+		{ name: 'C++', image: '/logos/cpp.svg' },
+		{ name: 'Golang', image: '/logos/golang.svg' },
+		{ name: 'Git', image: '/logos/git.svg' },
+		{ name: 'Linux', image: '/logos/linux.svg' },
+		{ name: 'MongoDB', image: '/logos/mongo.svg' },
+		{ name: 'Neovim', image: '/logos/nvim.svg' },
+		{ name: 'Tailwind CSS', image: '/logos/tailwindcss.svg' }
+	];
+
+	export function getRandomInt(min: number, max: number): number {
+		min = Math.ceil(min);
+		max = Math.floor(max);
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	export function generateTilt() {
+		const translateXYLowerLimit = -10;
+		const translateXYUpperLimit = 10;
+		const rotateLowerLimit = -20;
+		const rotateUpperLimit = 20;
+
+		const translateX = getRandomInt(translateXYLowerLimit, translateXYUpperLimit);
+		const translateY = getRandomInt(translateXYLowerLimit, translateXYUpperLimit);
+
+		const rotate = getRandomInt(rotateLowerLimit, rotateUpperLimit);
+
+		return `translate: ${translateX}px ${translateY}px; rotate: ${rotate}deg`;
+	}
+</script>
+
+<main class="max-w-7xl mx-auto">
+	<section class="my-[5vh] min-h-[50vh] grid place-items-center">
+		<p
+			class="text-[10vw] text-center self-end uppercase font-extrabold sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl"
+		>
+			Adnan Mansuri
+		</p>
+		<p
+			class="text-center text-secondary self-start font-semibold text-[6vw] sm:text-3xl md:text-4xl"
+		>
+			Software Developer
+		</p>
+	</section>
+
+	<h3 class="text-4xl sm:text-5xl font-black text-center my-5 mb-10" aria-label="Tech Stack">
+		Arsenal
+	</h3>
+	<div
+		class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-8 mb-10"
+	>
+		{#each stacks as stack}
+			<div data-stack-name={stack.name} class="arsenal-icon" style={generateTilt()}>
+				<img
+					src={stack.image}
+					alt={`${stack.name} logo`}
+					width={64}
+					height={64}
+					class="object-fit w-[64px] aspect-square"
+				/>
+			</div>
+		{/each}
+	</div>
+
+	<JobExperience />
+
+	<section class="py-16 px-4 sm:px-6 lg:px-8">
+		<h2 class="text-3xl font-bold text-center mb-12">Latest GitHub Repositories</h2>
+		<div class="flex gap-8 flex-wrap">
+			{#each data.repos as repo}
+				<div class="flex flex-col bg-gray-800 border border-secondary p-6 w-96">
+					<h3 class="text-xl font-semibold text-secondary mb-2">{repo.name}</h3>
+					<p class="text-gray-300 flex-1 mb-4 line-clamp-3" title={repo.description}>
+						{repo.description}
+					</p>
+					<div class="flex justify-between items-center">
+						<div class="flex space-x-4">
+							<span class="flex gap-2 items-center text-gray-400">
+								<StarIcon />
+								{repo.stars}
+							</span>
+							<span class="flex gap-2 items-center text-gray-400">
+								<GitFork />
+								{repo.forks}
+							</span>
+						</div>
+						<a
+							href={repo.url}
+							target="_blank"
+							class="text-secondary cursor-pointer transition-all duration-150 bg-white flex gap-2 rounded-md p-2 border border-secondary hover:bg-secondary hover:text-gray-900"
+						>
+							<GithubOutline />
+							View
+						</a>
+					</div>
+				</div>
+			{/each}
+		</div>
+	</section>
+</main>

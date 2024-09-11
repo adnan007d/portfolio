@@ -1,0 +1,52 @@
+@import 'tailwindcss';
+
+body {
+	background: #1d1d1d;
+	color: #f1f1f1;
+	font-family: 'Jetbrains Mono';
+}
+
+@theme {
+	--color-secondary: hsl(273 98% 60%);
+}
+
+@font-face {
+	font-family: 'Jetbrains Mono';
+	font-style: 'normal';
+	font-weight: 400;
+	font-display: 'swap';
+	src: url('/fonts/JetBrainsMono-Regular.woff2');
+}
+
+@font-face {
+	font-family: 'Jetbrains Mono';
+	font-style: 'semibold';
+	font-weight: 600;
+	font-display: 'swap';
+	src: url('/fonts/JetBrainsMono-SemiBold.woff2');
+}
+
+@font-face {
+	font-family: 'Jetbrains Mono';
+	font-style: 'bold';
+	font-weight: 700;
+	font-display: 'swap';
+	src: url('/fonts/JetBrainsMono-Bold.woff2');
+}
+
+@font-face {
+	font-family: 'Jetbrains Mono';
+	font-style: 'extrabold';
+	font-weight: 800;
+	font-display: 'swap';
+	src: url('/fonts/JetBrainsMono-ExtraBold.woff2');
+}
+
+.arsenal-icon {
+	@apply p-2 bg-white rounded-full relative 
+              before:content-[attr(data-stack-name)]
+              before:absolute before:bg-white before:text-secondary before:font-bold before:p-1 
+              before:mx-auto before:left-0 before:right-0 before:-top-8 before:rounded-md before:w-max 
+              before:opacity-0 before:scale-50 before:duration-300 before:transition-all 
+              hover:cursor-pointer hover:before:scale-100  hover:before:opacity-100;
+}
