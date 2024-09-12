@@ -41,11 +41,11 @@
 					<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
 						<div>
 							<h3 class="text-xl font-semibold text-secondary">{job.title}</h3>
-							<p class="text-gray-400">{job.company}</p>
+							<p class="text-slate-200">{job.company}</p>
 						</div>
-						<span class="text-sm text-gray-500 mt-2 sm:mt-0">{job.period}</span>
+						<span class="text-sm text-slate-400 mt-2 sm:mt-0">{job.period}</span>
 					</div>
-					<p class="text-gray-300">{job.description}</p>
+					<p class="text-slate-200">{job.description}</p>
 				</div>
 			</div>
 		{/each}

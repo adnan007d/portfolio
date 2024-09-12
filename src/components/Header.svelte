@@ -1,10 +1,11 @@
 <script>
-	import ProfileImage from '$lib/assets/profile_48x48.webp';
+	import ProfileImage from '$lib/assets/profile_72x72.webp';
 </script>
 
 <header class="flex justify-between items-center p-4 max-w-7xl mx-auto">
 	<img class="rounded-full" src={ProfileImage} alt="Profile" width={48} height={48} />
 	<button
+		aria-label="Theme Toggle"
 		on:click={() => {
 			window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
 		}}

@@ -57,6 +57,18 @@
 		</p>
 	</section>
 
+	<section class="px-4 py-12">
+		<p class="text-4xl sm:text-5xl font-black text-center my-5 mb-10">About</p>
+		<h1 class="text-slate-200 font-bold text-lg px-4">
+			Software Developer with 5 Years of programming experince. I like working on backend and
+			software development and learning about new technologies
+			<br />
+			I have worked with various programming languages and frameworks namely TypeScript, JavaScript,
+			Node.js, Express.js, Next.js, React.js, Golang, Python, C/C++
+			<br />
+			Capable of adapting quickly to any framework/language efficiently
+		</h1>
+	</section>
 	<h3 class="text-4xl sm:text-5xl font-black text-center my-5 mb-10" aria-label="Tech Stack">
 		Arsenal
 	</h3>
@@ -68,9 +80,9 @@
 				<img
 					src={stack.image}
 					alt={`${stack.name} logo`}
-					width={64}
-					height={64}
-					class="object-fit w-[64px] aspect-square"
+					width={72}
+					height={72}
+					class="object-fit w-[72px] aspect-square"
 				/>
 			</div>
 		{/each}

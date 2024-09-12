@@ -16,7 +16,7 @@ type Repo = {
 };
 
 export const load: PageServerLoad = async () => {
-	const res = await fetch('https://api.github.com/users/adnan007d/repos?sort=created&per_page=3');
+	const res = await fetch('https://api.github.com/users/adnan007d/repos?sort=pushed&per_page=3');
 
 	const data: Repo[] = [];
 
