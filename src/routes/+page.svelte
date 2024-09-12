@@ -73,34 +73,40 @@
 	<section class="py-16 px-4 sm:px-6 lg:px-8">
 		<h2 class="text-3xl font-bold text-center mb-12">Latest GitHub Repositories</h2>
 		<div class="flex gap-8 flex-wrap justify-center">
-			{#each data.repos as repo}
-				<div class="flex flex-col bg-gray-800 border border-secondary p-6 w-96">
-					<h3 class="text-2xl font-semibold text-secondary mb-2">{repo.name}</h3>
-					<p class="text-gray-300 flex-1 mb-4 line-clamp-3" title={repo.description}>
-						{repo.description}
-					</p>
-					<div class="flex justify-between items-center">
-						<div class="flex space-x-4">
-							<span class="flex gap-2 items-center text-gray-400">
-								<StarIcon />
-								{repo.stars}
-							</span>
-							<span class="flex gap-2 items-center text-gray-400">
-								<GitFork />
-								{repo.forks}
-							</span>
+			{#await data.repos}
+				<p>Loading....</p>
+			{:then repos}
+				{#each repos as repo}
+					<div class="flex flex-col bg-gray-800 border border-secondary p-6 w-96">
+						<h3 class="text-2xl font-semibold text-secondary mb-2">{repo.name}</h3>
+						<p class="text-gray-300 flex-1 mb-4 line-clamp-3" title={repo.description}>
+							{repo.description}
+						</p>
+						<div class="flex justify-between items-center">
+							<div class="flex space-x-4">
+								<span class="flex gap-2 items-center text-gray-400">
+									<StarIcon />
+									{repo.stars}
+								</span>
+								<span class="flex gap-2 items-center text-gray-400">
+									<GitFork />
+									{repo.forks}
+								</span>
+							</div>
+							<a
+								href={repo.url}
+								target="_blank"
+								class="text-secondary cursor-pointer transition-all duration-150 bg-white flex gap-2 rounded-md p-2 border border-secondary hover:bg-secondary hover:text-gray-900"
+							>
+								<GithubOutline />
+								View
+							</a>
 						</div>
-						<a
-							href={repo.url}
-							target="_blank"
-							class="text-secondary cursor-pointer transition-all duration-150 bg-white flex gap-2 rounded-md p-2 border border-secondary hover:bg-secondary hover:text-gray-900"
-						>
-							<GithubOutline />
-							View
-						</a>
 					</div>
-				</div>
-			{/each}
+				{/each}
+			{:catch error}
+				<p>error while fetching github repos {error.message}</p>
+			{/await}
 		</div>
 	</section>
 </main>
