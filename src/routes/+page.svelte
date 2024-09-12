@@ -69,9 +69,9 @@
 			Capable of adapting quickly to any framework/language efficiently
 		</h1>
 	</section>
-	<h3 class="text-4xl sm:text-5xl font-black text-center my-5 mb-10" aria-label="Tech Stack">
+	<p class="text-4xl sm:text-5xl font-black text-center my-5 mb-10" aria-label="Tech Stack">
 		Arsenal
-	</h3>
+	</p>
 	<div
 		class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-8 mb-10"
 	>

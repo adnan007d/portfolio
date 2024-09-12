@@ -39,6 +39,8 @@ export const load: PageServerLoad = async () => {
 				})
 			)
 		);
+	} else {
+		console.error(await res.json());
 	}
 	return { repos: data };
 };
