@@ -75,7 +75,7 @@
 		<div class="flex gap-8 flex-wrap justify-center">
 			{#each data.repos as repo}
 				<div class="flex flex-col bg-gray-800 border border-secondary p-6 w-96">
-					<h3 class="text-[22px] font-semibold text-secondary mb-2">{repo.name}</h3>
+					<h3 class="text-2xl font-semibold text-secondary mb-2">{repo.name}</h3>
 					<p class="text-gray-300 flex-1 mb-4 line-clamp-3" title={repo.description}>
 						{repo.description}
 					</p>
