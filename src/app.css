@@ -45,7 +45,7 @@ body {
 .arsenal-icon {
 	@apply p-2 bg-white rounded-full relative 
               before:content-[attr(data-stack-name)]
-              before:absolute before:bg-white before:text-secondary before:font-bold before:p-1 
+              before:absolute before:bg-white before:text-secondary before:font-bold before:p-1 before:mx-auto
               before:mx-auto before:left-0 before:right-0 before:-top-8 before:rounded-md before:w-max 
               before:opacity-0 before:scale-50 before:duration-300 before:transition-all 
               hover:cursor-pointer hover:before:scale-100  hover:before:opacity-100;

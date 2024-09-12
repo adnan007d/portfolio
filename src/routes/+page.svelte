@@ -19,28 +19,8 @@
 		{ name: 'Linux', image: '/logos/linux.svg' },
 		{ name: 'MongoDB', image: '/logos/mongo.svg' },
 		{ name: 'Neovim', image: '/logos/nvim.svg' },
-		{ name: 'Tailwind CSS', image: '/logos/tailwindcss.svg' }
+		{ name: 'Tailwind', image: '/logos/tailwindcss.svg' }
 	];
-
-	export function getRandomInt(min: number, max: number): number {
-		min = Math.ceil(min);
-		max = Math.floor(max);
-		return Math.floor(Math.random() * (max - min + 1)) + min;
-	}
-
-	export function generateTilt() {
-		const translateXYLowerLimit = -10;
-		const translateXYUpperLimit = 10;
-		const rotateLowerLimit = -20;
-		const rotateUpperLimit = 20;
-
-		const translateX = getRandomInt(translateXYLowerLimit, translateXYUpperLimit);
-		const translateY = getRandomInt(translateXYLowerLimit, translateXYUpperLimit);
-
-		const rotate = getRandomInt(rotateLowerLimit, rotateUpperLimit);
-
-		return `translate: ${translateX}px ${translateY}px; rotate: ${rotate}deg`;
-	}
 </script>
 
 <main class="max-w-7xl mx-auto">
@@ -76,7 +56,7 @@
 		class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-8 mb-10"
 	>
 		{#each stacks as stack}
-			<div data-stack-name={stack.name} class="arsenal-icon" style={generateTilt()}>
+			<div data-stack-name={stack.name} class="arsenal-icon">
 				<img
 					src={stack.image}
 					alt={`${stack.name} logo`}
@@ -92,10 +72,10 @@
 
 	<section class="py-16 px-4 sm:px-6 lg:px-8">
 		<h2 class="text-3xl font-bold text-center mb-12">Latest GitHub Repositories</h2>
-		<div class="flex gap-8 flex-wrap">
+		<div class="flex gap-8 flex-wrap justify-center">
 			{#each data.repos as repo}
 				<div class="flex flex-col bg-gray-800 border border-secondary p-6 w-96">
-					<h3 class="text-2xl font-semibold text-secondary mb-2">{repo.name}</h3>
+					<h3 class="text-[22px] font-semibold text-secondary mb-2">{repo.name}</h3>
 					<p class="text-gray-300 flex-1 mb-4 line-clamp-3" title={repo.description}>
 						{repo.description}
 					</p>
