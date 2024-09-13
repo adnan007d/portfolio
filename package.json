@@ -11,7 +11,7 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"sitemap": "node generate_sitemap.js",
-		"postbuild": "pnpm sitemap"
+		"prebuild": "pnpm sitemap"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
