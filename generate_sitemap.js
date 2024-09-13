@@ -8,7 +8,7 @@ async function main() {
 	const routes = await glob('./src/routes/**/+page.svelte');
 	const pages = [];
 	for (const route of routes) {
-		pages.push(site + route.replace('src/routes', '').replace('+page.svelte', ''));
+		pages.push(site + route.replace('./src/routes', '').replace('+page.svelte', ''));
 	}
 
 	const content = `
