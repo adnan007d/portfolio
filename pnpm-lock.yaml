@@ -35,6 +35,9 @@ importers:
       eslint-plugin-svelte:
         specifier: ^2.36.0
         version: 2.43.0(eslint@9.10.0)(svelte@5.0.0-next.244)
+      fast-glob:
+        specifier: ^3.3.2
+        version: 3.3.2
       globals:
         specifier: ^15.0.0
         version: 15.9.0
