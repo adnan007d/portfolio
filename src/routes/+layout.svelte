@@ -10,5 +10,7 @@
 	description="Experienced Software Developer with expertise in TypeScript, Node.js, Next.js, data structures, and algorithms. "
 />
 <Header />
-<slot />
+<main class="max-w-7xl flex-1">
+	<slot />
+</main>
 <Footer />

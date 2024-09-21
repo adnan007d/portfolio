@@ -2,8 +2,10 @@
 	import ProfileImage from '$lib/assets/profile_72x72.webp';
 </script>
 
-<header class="flex justify-between items-center p-4 max-w-7xl mx-auto">
-	<img class="rounded-full" src={ProfileImage} alt="Profile" width={48} height={48} />
+<header class="flex justify-between items-center p-4 max-w-7xl mx-auto w-full">
+	<a href="/">
+		<img class="rounded-full" src={ProfileImage} alt="Profile" width={48} height={48} />
+	</a>
 	<button
 		aria-label="Theme Toggle"
 		on:click={() => {

@@ -34,7 +34,7 @@
 	<div class="space-y-8">
 		{#each jobExperiences as job, i}
 			<div
-				class="bg-gray-800 border border-secondary max-w-3xl"
+				class="bg-gray-800 border border-secondary max-w-[100%] sm:max-w-3xl"
 				style={`${i & 1 ? 'margin-left' : 'margin-right'}: auto`}
 			>
 				<div class="p-6">

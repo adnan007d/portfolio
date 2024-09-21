@@ -1,9 +1,14 @@
 @import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
 body {
 	background: #1d1d1d;
 	color: #f1f1f1;
 	font-family: 'Jetbrains Mono';
+	display: flex;
+	flex-direction: column;
+	min-height: 100dvh;
+	align-items: center;
 }
 
 @theme {
