@@ -2,10 +2,10 @@
 title: My tsconfig and eslint configuration for Node.js
 description: My tsconfig and eslint configuration I use for all my projects as a starting point.
 type:
-    - snippet
+  - snippet
 tags:
-    - typescript
-    - eslint
+  - typescript
+  - eslint
 published: true
 date: 'September 21 2024'
 ---

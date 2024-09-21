@@ -104,7 +104,7 @@
 
 <section class="py-16 px-4 sm:px-6 lg:px-8">
 	<h3 class="text-3xl font-bold text-center mb-12">Latest Blogs</h3>
-	<a href="/blogs" class="text-secondary text-right inline-block w-full mb-4">View All Blogs</a>
+	<a href="/blogs" class="text-secondary rounded-md font-bold bg-white flex w-max p-2 ml-auto mb-4 font-bold">View All Blogs</a>
 	<ul class="flex flex-wrap">
 		{#each data.blogs as blog}
 			<BlogCard {blog} />
