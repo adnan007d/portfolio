@@ -14,7 +14,7 @@ export async function getBlogs() {
 			const blog = file.metadata as Blog;
 			blog.slug = slug;
 
-			if (blog.published) blogs.push(blog);
+			if (blog.published || import.meta.env.DEV) blogs.push(blog);
 		}
 
 		blogs.sort((first, second) => new Date(second.date).getTime() - new Date(first.date).getTime());

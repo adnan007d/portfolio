@@ -7,7 +7,7 @@ async function sitemap() {
 			eager: true
 		})
 	);
-	console.log(routes);
+
 	const pages = [] as string[];
 	for (const route of routes) {
 		pages.push(route.replace('/src/routes/', '').replace('+page.svelte', ''));
@@ -15,8 +15,6 @@ async function sitemap() {
 
 	const blogs = await getBlogs();
 	blogs.forEach((blog) => pages.push(`blogs/${blog.slug}/`));
-
-	console.log(pages);
 
 	const content = `
 <?xml version="1.0" encoding="UTF-8" ?>

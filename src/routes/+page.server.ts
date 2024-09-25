@@ -1,4 +1,4 @@
-import type { ServerPageLoad } from './$types';
+import type { PageServerLoad } from './$types';
 import { getBlogs } from '$lib';
 
 type Repo = {
@@ -16,7 +16,7 @@ function getGitRepos(fetchx: typeof fetch) {
 			.catch(reject)
 	);
 }
-export const load: ServerPageLoad = async () => {
+export const load: PageServerLoad = async () => {
 	return {
 		blogs: await getBlogs().then((blogs) => blogs.slice(0, 3)),
 		repos: await getGitRepos(fetch)

@@ -5,9 +5,10 @@ import type { Blog } from '@/lib/types';
 export const load: PageLoad = async ({ params }) => {
 	try {
 		const blog = await import(`@/blogs/${params.slug}.md`);
+		blog.metadata.slug = params.slug;
 		return {
 			content: blog.default,
-			metadata: blog.metadata as Omit<Blog, 'slug'>
+			metadata: blog.metadata as Blog
 		};
 	} catch (e) {
 		console.error(e);
