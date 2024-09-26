@@ -28,6 +28,7 @@
 <SvelteSeo
 	title="Adnan Mansuri"
 	description="Experienced Software Developer with expertise in TypeScript, Node.js, Next.js, data structures, and algorithms. "
+	path="/"
 />
 <section class="my-[5vh] min-h-[50vh] grid place-items-center">
 	<p

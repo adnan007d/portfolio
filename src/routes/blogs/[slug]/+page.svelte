@@ -6,6 +6,7 @@
 <SvelteSeo
 	title={data.metadata.title}
 	description={data.metadata.description}
+	path={`/blogs/${data.metadata.slug}`}
 	imagePath={`/api/og?slug=${data.metadata.slug}`}
 	squareImagePath={`/api/og?slug=${data.metadata.slug}&type=square`}
 />

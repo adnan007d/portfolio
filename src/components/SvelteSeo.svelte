@@ -1,7 +1,8 @@
 <script lang="ts">
+	export let baseUrl = 'https://www.adnan007d.dev';
 	export let title: string;
 	export let description: string;
-	export let url = 'https://www.adnan007d.dev';
+	export let path: string;
 	export let image = 'https://www.adnan007d.dev/og-image.jpg';
 	export let imagePath: string | null = null;
 	export let imageWidth = 1200;
@@ -11,8 +12,9 @@
 	export let squareImageWidth = 1200;
 	export let squareImageHeight = 1200;
 
-	squareImage = squareImagePath ? `${url}${squareImagePath}` : squareImage;
-	image = imagePath ? `${url}${imagePath}` : image;
+	squareImage = squareImagePath ? `${baseUrl}${squareImagePath}` : squareImage;
+	image = imagePath ? `${baseUrl}${imagePath}` : image;
+	let url = `${baseUrl}${path}`;
 </script>
 
 <svelte:head>
@@ -38,4 +40,6 @@
 	<meta name="twitter:description" content={description} />
 	<meta name="twitter:image" content={image} />
 	<meta name="twitter:image:alt" content="og image" />
+	<link rel="canonical" href={url} />
+	<meta name="author" content="Adnan Mansuri" />
 </svelte:head>

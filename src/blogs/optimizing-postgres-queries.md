@@ -2,12 +2,12 @@
 title: Optimizing Postgres Queries
 description: 'Optimizing Postgres queries using indexes, EXPLAIN, EXPLAIN ANALYZE and bad system designs'
 type:
-    - blog
+  - blog
 tags:
-    - database
-    - postgres
-    - optimization
-    - indexes
+  - database
+  - postgres
+  - optimization
+  - indexes
 published: true
 date: 'September 25 2024'
 ---
@@ -714,7 +714,7 @@ The index did improve the performance but still the query is slow. This is becau
 I will think about how to tackle this particular case. I am already using redis to cache the request
 for a set amount of time but that doesn't solve the main problem
 
--   Create a field of `likes` and `comments` in post table and update it periodically?
+- Create a field of `likes` and `comments` in post table and update it periodically?
 
 One thing to add about using `OFFSET` it can be slow if the offset is high as it fetches all
 the rows and then offset/delete not required rows. It is better to use alternative here is a good

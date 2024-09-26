@@ -7,6 +7,7 @@
 <SvelteSeo
 	title="Blogs | Adnan Mansuri"
 	description="My blogs on various topics like software development, programming, and technology"
+	path="/blogs"
 />
 
 <section>
