@@ -29,7 +29,7 @@ export const GET: RequestHandler = async ({ url }) => {
 <div style="font-family:'JetBrainsMono';background:#1d1d1d; color:white; display:flex;align-items:center;justify-content:center;height:100%;width:100%">
   <div style="display:flex;flex-direction:column;margin-left:2%; margin-right:2%;">
 	<p style="font-size: 2.5rem;display:flex; text-align:center;text-transform: uppercase; margin-left: auto; margin-right:auto">${blog.title}</p>
-  <p style='color: hsl(273 98% 60%);display:block; line-clamp: 3 "...";font-size: 1.25rem;text-transform: uppercase;text-align: center; margin-left: auto; margin-right:auto'>${blog.description}</p>
+  <p style='display:block; line-clamp: 3 "...";font-size: 1.25rem;text-transform: uppercase;text-align: center; margin-left: auto; margin-right:auto'>${blog.description}</p>
   </div>
 	<p style="font-size:1.25rem; position:absolute; bottom:2%; right:2%; text-transform: uppercase;">By Adnan Mansuri</p>
 </div>
