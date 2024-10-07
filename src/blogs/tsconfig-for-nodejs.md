@@ -70,7 +70,10 @@ You can remove some options depending on your use case
 
 File: **eslint.config.mjs**
 
-You can remove prettier if you don't use it
+You can remove prettier if you don't use it 
+```shell
+pnpm i -D eslint-config-prettier
+```
 
 ```js
 import eslint from '@eslint/js';
