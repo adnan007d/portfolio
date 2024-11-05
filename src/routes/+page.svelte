@@ -90,33 +90,39 @@
 <section class="py-16 px-4 sm:px-6 lg:px-8">
 	<h3 class="text-3xl font-bold text-center mb-12">Latest GitHub Repositories</h3>
 	<div class="flex gap-8 flex-wrap justify-center">
-		{#each data.repos as repo}
+		{#await data.repos}
 			<div class="flex flex-col bg-gray-800 border border-secondary w-full p-6 sm:w-96">
-				<p class="text-2xl font-semibold text-secondary mb-2">{repo.name}</p>
-				<p class="text-gray-300 flex-1 mb-4 line-clamp-3" title={repo.description}>
-					{repo.description}
-				</p>
-				<div class="flex justify-between items-center">
-					<div class="flex space-x-4">
-						<span class="flex gap-2 items-center text-gray-400">
-							<StarIcon />
-							{repo.stargazers_count}
-						</span>
-						<span class="flex gap-2 items-center text-gray-400">
-							<GitFork />
-							{repo.forks}
-						</span>
-					</div>
-					<a
-						href={repo.html_url}
-						target="_blank"
-						class="text-secondary cursor-pointer transition-all duration-150 bg-white flex gap-2 rounded-md p-2 border border-secondary hover:bg-secondary hover:text-gray-900"
-					>
-						<GithubOutline />
-						View
-					</a>
-				</div>
+				<p class="text-2xl font-semibold text-secondary mb-2">Loading...</p>
 			</div>
-		{/each}
+		{:then repos}
+			{#each repos as repo}
+				<div class="flex flex-col bg-gray-800 border border-secondary w-full p-6 sm:w-96">
+					<p class="text-2xl font-semibold text-secondary mb-2">{repo.name}</p>
+					<p class="text-gray-300 flex-1 mb-4 line-clamp-3" title={repo.description}>
+						{repo.description}
+					</p>
+					<div class="flex justify-between items-center">
+						<div class="flex space-x-4">
+							<span class="flex gap-2 items-center text-gray-400">
+								<StarIcon />
+								{repo.stargazers_count}
+							</span>
+							<span class="flex gap-2 items-center text-gray-400">
+								<GitFork />
+								{repo.forks}
+							</span>
+						</div>
+						<a
+							href={repo.html_url}
+							target="_blank"
+							class="text-secondary cursor-pointer transition-all duration-150 bg-white flex gap-2 rounded-md p-2 border border-secondary hover:bg-secondary hover:text-gray-900"
+						>
+							<GithubOutline />
+							View
+						</a>
+					</div>
+				</div>
+			{/each}
+		{/await}
 	</div>
 </section>

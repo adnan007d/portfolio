@@ -1,5 +1,5 @@
 // place files you want to import through the `$lib` alias in this folder.
-import type { Blog } from '$lib/types';
+import type { Blog, Repo } from '$lib/types';
 
 export async function getBlogs() {
 	const blogs: Blog[] = [];
@@ -21,4 +21,12 @@ export async function getBlogs() {
 	}
 
 	return blogs;
+}
+
+export function getGitRepos() {
+	return new Promise<Repo[]>((resolve, reject) =>
+		fetch('https://api.github.com/users/adnan007d/repos?sort=pushed&per_page=3')
+			.then((res) => (res.ok ? resolve(res.json()) : reject()))
+			.catch(reject)
+	);
 }
