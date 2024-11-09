@@ -308,7 +308,7 @@ Well just use the built in `net.ParseIP` method, it's fast and also handles ipv6
 
 If you are a graph enjoyer
 
-<img width="800" height="460" class="max-w-full mx-auto" src="https://utfs.io/f/QPqXv0o0mVZLvy98aF4Dp9Kwo7rFRn5Tum6X01f2aEJqZCjM" alt="benchmark" loading="lazy">
+<img width="800" height="460" class="max-w-full mx-auto" src="https://utfs.io/f/QPqXv0o0mVZLvy98aF4Dp9Kwo7rFRn5Tum6X01f2aEJqZCjM" alt="benchmark">
 
 - BigString = "aslduasodusadiusoaiudowaiuoiuasdlsakjdlsakhdaklsjhdajsdkajsgdkasdk"
 - DefaultGateway = "192.168.0.1"
