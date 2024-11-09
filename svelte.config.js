@@ -6,7 +6,7 @@ import { createHighlighter } from 'shiki';
 const theme = 'dracula';
 const highlighter = await createHighlighter({
 	theme: [theme],
-	langs: ['javascript', 'typescript', 'shell', 'json', 'sql']
+	langs: ['javascript', 'typescript', 'shell', 'json', 'sql', 'go', 'regex']
 });
 
 await highlighter.loadTheme(theme);

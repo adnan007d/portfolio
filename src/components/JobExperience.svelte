@@ -8,6 +8,12 @@
 
 	const jobExperiences: JobExperience[] = [
 		{
+			title: 'Senior Analyst',
+			company: 'EY',
+			period: 'Nov 2024 - Present',
+			description: ''
+		},
+		{
 			title: 'Backend Developer',
 			company: 'Optiminastic Media',
 			period: 'Aug 2022 - Aug 2023',
