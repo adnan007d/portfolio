@@ -6,22 +6,43 @@
 	import GithubOutline from '@/logos/GithubOutline.svelte';
 	import BlogCard from '@/components/BlogCard.svelte';
 	import SvelteSeo from '@/components/SvelteSeo.svelte';
-	export let data: PageData;
+	import Nodejs from '@/logos/Nodejs.svelte';
+	import Typescript from '@/logos/Typescript.svelte';
+	import Nextjs from '@/logos/Nextjs.svelte';
+	import React from '@/logos/React.svelte';
+	import SQL from '@/logos/SQL.svelte';
+	import Python from '@/logos/Python.svelte';
+	import Cpp from '@/logos/Cpp.svelte';
+	import Golang from '@/logos/Golang.svelte';
+	import Git from '@/logos/Git.svelte';
+	import Linux from '@/logos/Linux.svelte';
+	import Mongo from '@/logos/Mongo.svelte';
+	import Nvim from '@/logos/Nvim.svelte';
+	import Tailwind from '@/logos/Tailwind.svelte';
+	import Angular from '@/logos/Angular.svelte';
+	import Dotnet from '@/logos/Dotnet.svelte';
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 
 	const stacks = [
-		{ name: 'Node.js', image: '/logos/nodejs.svg' },
-		{ name: 'Typescript', image: '/logos/typescript.svg' },
-		{ name: 'Next.js', image: '/logos/nextjs.svg' },
-		{ name: 'React.js', image: '/logos/react.svg' },
-		{ name: 'SQL', image: '/logos/sql.svg' },
-		{ name: 'Python', image: '/logos/python.svg' },
-		{ name: 'C++', image: '/logos/cpp.svg' },
-		{ name: 'Golang', image: '/logos/golang.svg' },
-		{ name: 'Git', image: '/logos/git.svg' },
-		{ name: 'Linux', image: '/logos/linux.svg' },
-		{ name: 'MongoDB', image: '/logos/mongo.svg' },
-		{ name: 'Neovim', image: '/logos/nvim.svg' },
-		{ name: 'Tailwind', image: '/logos/tailwindcss.svg' }
+		{ name: 'Node.js', component: Nodejs },
+		{ name: 'Typescript', component: Typescript },
+		{ name: 'Next.js', component: Nextjs },
+		{ name: 'React.js', component: React },
+		{ name: 'SQL', component: SQL },
+		{ name: 'Python', component: Python },
+		{ name: 'C++', component: Cpp },
+		{ name: 'Golang', component: Golang },
+		{ name: 'Git', component: Git },
+		{ name: 'Linux', component: Linux },
+		{ name: 'MongoDB', component: Mongo },
+		{ name: 'Neovim', component: Nvim },
+		{ name: 'Tailwind', component: Tailwind },
+		{ name: 'Angular', component: Angular },
+		{ name: '.NET', component: Dotnet }
 	];
 </script>
 
@@ -44,8 +65,9 @@
 <section class="px-4 py-12">
 	<p class="text-4xl sm:text-5xl font-black text-center my-5 mb-10">About</p>
 	<h1 class="text-slate-200 font-bold text-lg px-4">
-		Software Developer with 5 Years of programming experience. I like working on backend and
-		software development and learning about new technologies
+		Software Developer with 6 years of programming experience and 2 years of professional
+		experience. I like working on backend and software development and learning about new
+		technologies
 		<br />
 		I have worked with various programming languages and frameworks namely TypeScript, JavaScript, Node.js,
 		Express.js, Next.js, React.js, Golang, Python, C/C++
@@ -61,22 +83,14 @@
 >
 	{#each stacks as stack}
 		<div data-stack-name={stack.name} class="arsenal-icon">
-			<img
-				src={stack.image}
-				alt={`${stack.name} logo`}
-				width={72}
-				height={72}
-				class="object-fit w-[72px] aspect-square"
-			/>
+			<stack.component size={72} className="object-fit w-[72px] aspect-square" />
 		</div>
 	{/each}
 </div>
 
 <section class="py-16 px-4 sm:px-6 lg:px-8">
 	<h2 class="text-3xl font-bold text-center mb-12">Latest Blogs</h2>
-	<a
-		href="/blogs"
-		class="text-secondary rounded-md font-bold bg-white flex w-max p-2 ml-auto mb-4 font-bold"
+	<a href="/blogs" class="text-secondary rounded-md font-bold bg-white flex w-max p-2 ml-auto mb-4"
 		>View All Blogs</a
 	>
 	<ul class="flex flex-wrap gap-5">

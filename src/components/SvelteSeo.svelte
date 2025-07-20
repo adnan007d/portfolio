@@ -1,16 +1,33 @@
 <script lang="ts">
-	export let baseUrl = 'https://www.adnan007d.dev';
-	export let title: string;
-	export let description: string;
-	export let path: string;
-	export let image = 'https://www.adnan007d.dev/og-image.jpg';
-	export let imagePath: string | null = null;
-	export let imageWidth = 1200;
-	export let imageHeight = 600;
-	export let squareImagePath: string | null = null;
-	export let squareImage = 'https://www.adnan007d.dev/og-image.jpg';
-	export let squareImageWidth = 1200;
-	export let squareImageHeight = 1200;
+	interface Props {
+		baseUrl?: string;
+		title: string;
+		description: string;
+		path: string;
+		image?: string;
+		imagePath?: string | null;
+		imageWidth?: number;
+		imageHeight?: number;
+		squareImagePath?: string | null;
+		squareImage?: string;
+		squareImageWidth?: number;
+		squareImageHeight?: number;
+	}
+
+	let {
+		baseUrl = 'https://www.adnan007d.dev',
+		title,
+		description,
+		path,
+		image = 'https://www.adnan007d.dev/og-image.jpg',
+		imagePath = null,
+		imageWidth = 1200,
+		imageHeight = 600,
+		squareImagePath = null,
+		squareImage = 'https://www.adnan007d.dev/og-image.jpg',
+		squareImageWidth = 1200,
+		squareImageHeight = 1200
+	}: Props = $props();
 
 	squareImage = squareImagePath ? `${baseUrl}${squareImagePath}` : squareImage;
 	image = imagePath ? `${baseUrl}${imagePath}` : image;

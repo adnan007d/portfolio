@@ -1,6 +1,11 @@
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<script lang="ts">
+	let { size = 40, className = '' } = $props();
+</script>
+
 <svg
-	class="w-[40px] aspect-square"
+	class={className}
+	width={size}
+	height={size}
 	viewBox="0 0 24 24"
 	xmlns="http://www.w3.org/2000/svg"
 	fill="#000000"

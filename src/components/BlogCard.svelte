@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Blog } from '$lib/types';
 
-	export let blog: Blog;
+	let { blog }: { blog: Blog } = $props();
 </script>
 
 <li class="bg-gray-800 border border-secondary max-w-[95vw] w-96">

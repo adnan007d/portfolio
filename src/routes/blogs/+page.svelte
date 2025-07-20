@@ -1,7 +1,7 @@
 <script lang="ts">
 	import BlogCard from '@/components/BlogCard.svelte';
 	import SvelteSeo from '@/components/SvelteSeo.svelte';
-	export let data;
+	let { data } = $props();
 </script>
 
 <SvelteSeo

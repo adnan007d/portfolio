@@ -1,4 +1,15 @@
-<svg class="w-8 aspect-square" viewBox="0 0 24 24" aria-hidden="true">
+<script lang="ts">
+	let { size = 24, className = '' } = $props();
+</script>
+
+<svg
+	class={className}
+	viewBox="0 0 24 24"
+	aria-hidden="true"
+	width={size}
+	height={size}
+	fill="none"
+>
 	<g>
 		<path
 			stroke="#A335FD"

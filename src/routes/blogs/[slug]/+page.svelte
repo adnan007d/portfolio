@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SvelteSeo from '@/components/SvelteSeo.svelte';
-	export let data;
+	let { data } = $props();
 </script>
 
 <SvelteSeo
@@ -19,6 +19,6 @@
 	</span>
 
 	<div class="prose prose-invert max-w-full prose-code:none py-10">
-		<svelte:component this={data.content} />
+		<data.content />
 	</div>
 </article>

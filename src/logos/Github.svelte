@@ -1,3 +1,7 @@
+<script lang="ts">
+	let { size = 72, className = '' } = $props();
+</script>
+
 <svg
 	xmlns="http://www.w3.org/2000/svg"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -20,6 +24,9 @@
 		font-size="none"
 		text-anchor="none"
 		style="mix-blend-mode: normal"
+		class={className}
+		width={size}
+		height={size}
 	>
 		<g transform="scale(8.53333,8.53333)">
 			<path
