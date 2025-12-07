@@ -8,9 +8,15 @@
 
 	const jobExperiences: JobExperience[] = [
 		{
+			title: 'Associate Consultant',
+			company: 'EY',
+			period: 'Oct 2025 - Present',
+			description: ''
+		},
+		{
 			title: 'Senior Analyst',
 			company: 'EY',
-			period: 'Nov 2024 - Present',
+			period: 'Nov 2024 - Sep 2025',
 			description: ''
 		},
 		{
@@ -38,7 +44,7 @@
 <section class="py-16 px-4 sm:px-6 lg:px-8">
 	<h2 class="text-4xl sm:text-5xl font-black text-center my-5 mb-10">Experience</h2>
 	<div class="space-y-8">
-		{#each jobExperiences as job, i}
+		{#each jobExperiences as job, i (i)}
 			<div
 				class="bg-gray-800 border border-secondary max-w-[100%] sm:max-w-3xl"
 				style={`${i & 1 ? 'margin-left' : 'margin-right'}: auto`}

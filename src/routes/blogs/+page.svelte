@@ -13,7 +13,7 @@
 <section>
 	<h1 class="text-4xl py-10 text-center">Blogs</h1>
 	<ul class="grid gap-5 md:grid-cols-2 xl:grid-cols-3 p-4">
-		{#each data.blogs as blog}
+		{#each data.blogs as blog (blog.slug)}
 			<BlogCard {blog} />
 		{/each}
 	</ul>

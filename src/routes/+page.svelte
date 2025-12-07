@@ -70,7 +70,7 @@
 		technologies
 		<br />
 		I have worked with various programming languages and frameworks namely TypeScript, JavaScript, Node.js,
-		Express.js, Next.js, React.js, Golang, Python, C/C++
+		Express.js, Next.js, React.js, Angular, Dotnet, Golang, Python, C/C++
 		<br />
 		Capable of adapting quickly to any framework/language efficiently
 	</h1>
@@ -81,7 +81,7 @@
 <div
 	class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-8 mb-10"
 >
-	{#each stacks as stack}
+	{#each stacks as stack (stack.name)}
 		<div data-stack-name={stack.name} class="arsenal-icon">
 			<stack.component size={72} className="object-fit w-[72px] aspect-square" />
 		</div>
@@ -94,7 +94,7 @@
 		>View All Blogs</a
 	>
 	<ul class="flex flex-wrap gap-5">
-		{#each data.blogs as blog}
+		{#each data.blogs as blog (blog.slug)}
 			<BlogCard {blog} />
 		{/each}
 	</ul>
@@ -109,7 +109,7 @@
 				<p class="text-2xl font-semibold text-secondary mb-2">Loading...</p>
 			</div>
 		{:then repos}
-			{#each repos as repo}
+			{#each repos as repo (repo.name)}
 				<div class="flex flex-col bg-gray-800 border border-secondary w-full p-6 sm:w-96">
 					<p class="text-2xl font-semibold text-secondary mb-2">{repo.name}</p>
 					<p class="text-gray-300 flex-1 mb-4 line-clamp-3" title={repo.description}>
