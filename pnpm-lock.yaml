@@ -18,6 +18,7 @@ overrides:
   devalue@>=5.3.0 <=5.6.1: '>=5.6.2'
   '@sveltejs/kit@>=2.19.0 <=2.49.4': '>=2.49.5'
   tar@<=7.5.2: '>=7.5.3'
+  tar@<=7.5.3: '>=7.5.4'
 
 importers:
 
@@ -1722,8 +1723,8 @@ packages:
   tailwindcss@4.0.0-alpha.23:
     resolution: {integrity: sha512-5dy4L1icQUYkG2Fa427QG3fKGkNqMi6V4bJE0DoxBZkR4e550w7uxYJ7vBXINWrRmDd4LHmQInkgsHza3lwONg==}
 
-  tar@7.5.3:
-    resolution: {integrity: sha512-ENg5JUHUm2rDD7IvKNFGzyElLXNjachNLp6RaGf4+JOgxXHkqA+gq81ZAMCUmtMtqBsoU62lcp6S27g1LCYGGQ==}
+  tar@7.5.6:
+    resolution: {integrity: sha512-xqUeu2JAIJpXyvskvU3uvQW8PAmHrtXp2KDuMJwQqW8Sqq0CaZBAQ+dKS3RBXVhU4wC5NjAdKrmh84241gO9cA==}
     engines: {node: '>=18'}
 
   tiny-inflate@1.0.3:
@@ -2083,7 +2084,7 @@ snapshots:
       node-fetch: 2.7.0
       nopt: 8.1.0
       semver: 7.7.2
-      tar: 7.5.3
+      tar: 7.5.6
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -3402,7 +3403,7 @@ snapshots:
 
   tailwindcss@4.0.0-alpha.23: {}
 
-  tar@7.5.3:
+  tar@7.5.6:
     dependencies:
       '@isaacs/fs-minipass': 4.0.1
       chownr: 3.0.0
