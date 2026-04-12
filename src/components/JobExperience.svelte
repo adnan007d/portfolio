@@ -23,20 +23,23 @@
 			title: 'Backend Developer',
 			company: 'Optiminastic Media',
 			period: 'Aug 2022 - Aug 2023',
-			description:
-				'Developing server side applications and helping in frontend using Express, Typescript and Next.js'
+			// description:
+			// 	'Developing server side applications and helping in frontend using Express, Typescript and Next.js'
+			description: ''
 		},
 		{
 			title: 'Software Developer',
 			company: 'R.D. National College',
 			period: 'May 2022 - Jun 2022',
-			description: 'Created both Website and App that is used by all students and college staff'
+			// description: 'Created both Website and App that is used by all students and college staff'
+			description: ''
 		},
 		{
 			title: 'Web Developer',
 			company: 'ShellCode Solutions',
 			period: 'Apr 2021 - Jul 2021',
-			description: 'Creating and maintaing admin dashboards'
+			// description: 'Creating and maintaing admin dashboards'
+			description: ''
 		}
 	];
 </script>

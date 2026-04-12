@@ -19,19 +19,19 @@
 		title,
 		description,
 		path,
-		image = 'https://www.adnan007d.dev/og-image.jpg',
+		image: _image = 'https://www.adnan007d.dev/og-image.jpg',
 		imagePath = null,
 		imageWidth = 1200,
 		imageHeight = 600,
 		squareImagePath = null,
-		squareImage = 'https://www.adnan007d.dev/og-image.jpg',
+		squareImage: _squareImage = 'https://www.adnan007d.dev/og-image.jpg',
 		squareImageWidth = 1200,
 		squareImageHeight = 1200
 	}: Props = $props();
 
-	squareImage = squareImagePath ? `${baseUrl}${squareImagePath}` : squareImage;
-	image = imagePath ? `${baseUrl}${imagePath}` : image;
-	let url = `${baseUrl}${path}`;
+	let squareImage = $derived(squareImagePath ? `${baseUrl}${squareImagePath}` : _squareImage);
+	let image = $derived(imagePath ? `${baseUrl}${imagePath}` : _image);
+	let url = $derived(`${baseUrl}${path}`);
 </script>
 
 <svelte:head>
